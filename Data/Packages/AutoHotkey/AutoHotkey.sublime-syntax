@@ -1,0 +1,194 @@
+%YAML 1.2
+# http://www.sublimetext.com/docs/3/syntax.html
+# Name: Sublime Text AutoHotkey 2 Syntax Highlighting
+# Author: Flipeador
+# Url: https://github.com/flipeador
+#
+#
+# Algunos usos de las expresiones regulares (regex):
+#
+# Greedy quantifier            = Un grupo tan grande como sea posible.
+# Lazy quantifier              = El grupo más pequeño posible.
+# +-------------------+-----------------+---------------------------+++------------------------+-------------+------------------------+
+# | Greedy quantifier | Lazy quantifier |        Descripción        ||| Haystack               | NeedleRegEx | Resultado              |
+# +-------------------+-----------------+---------------------------+++------------------------+-------------+------------------------+
+# | *                 | *?              | Cero o más veces          ||| <em>Hello World</em>   | (<.+>)      | <em>Hello World</em>   |
+# | +                 | +?              | Una o más veces           ||| <em>Hello World</em>   | (<.+?>)     | <em>                   |
+# | ?                 | ??              | Cero o una vez.           ||| abcdefghijklmc         | (a.*c)      | abcdefghijklmc         |
+# | {n}               | {n}?            | Exactamente n veces       ||| abcdefghijklmc         | (a.*?c)     | abc                    |
+# | {n,}              | {n,}?           | Por lo menos n veces      ||| https://x:x.xxx        | (.*:)       | https://x:             |
+# | {n,m}             | {n,m}?          | De n a m veces            ||| https://x:x.xxx        | (.*?:)      | https:                 |
+# +-------------------+-----------------+---------------------------+++------------------------+-------------+------------------------+
+#
+# +--------------------+--------------------------------------------------------------------------------------------------------------+
+# | RegEX              | Descripción                                                                                                  |
+# +--------------------+--------------------------------------------------------------------------------------------------------------+
+# | ?<!                | Coincidir si no empieza por                                                                                  |
+# | ?<=                | Coincidir si empieza por                                                                                     |
+# | ?!=                | Coincidir si no termina por                                                                                  |
+# | ?=                 | Coincidir si termina por                                                                                     |
+# | \b    \b           | Coincidir solo palabras completas                                                                            |
+# | \s                 | Representa un espacio: \s \t \r \n             \S representa lo contrario                                    |
+# | \d                 | Representa un dígito 0-9                       \D representa lo contrario                                    |
+# | \w                 | Representa una letra a-z A-Z o un dígito 0-9   \W representa lo contrario                                    |
+# | |                  | Separa varias alternativas                                                                                   |
+# | [     ]            | Incluye uno de los caracteres especificados                                                                  |
+# | [^    ]            | Excluye uno de los caracteres especificados                                                                  |
+# | (     )            | Agrupa caracteres y se utiliza para extraer información                                                      |
+# | (?:   )            | Agrupa caracteres pero se anula la captura                                                                   |
+# | ^                  | Indica el inicio de la línea                                                                                 |
+# | $                  | Indica el final de la línea                                                                                  |
+# +--------------------+--------------------------------------------------------------------------------------------------------------+
+#
+# Caracteres especiales:
+#   \ . * ? + [ { | ( ) ^ $
+#
+# Referencias:
+#   http://www.pcre.org/pcre.txt
+#   http://www.regular-expressions.info/
+#   http://regexr.com/
+#   https://regexone.com/lesson/
+#   https://www.adictosaltrabajo.com/tutoriales/regexsam/
+---
+
+
+name           : AutoHotkey 2
+file_extensions: [ahk, ahk2]
+scope          : source.ahk
+
+contexts:
+  main:
+    # Meta Braces: {}
+    - match: '[\[\]{}]'
+      scope: meta.block.ahk, meta.braces.ahk
+
+    # Meta Parens: ()
+    - match: '[\[\]()]'
+      scope: meta.group.ahk, meta.parens.ahk
+
+    # Meta Functions
+    - match: \b(?<!\.)(?i:guictrlfromhwnd|driveunlock|groupactivate|groupadd|groupclose|groupdeactivate|settitlematchmode|setwindelay|tan|statusbarwait|statusbargettext|guifromhwnd|guicreate|drivegetstatus|drivegetstatuscd|drivegettype|drivegetserial|drivegetlabel|drivegetfilesystem|drivegetspacefree|drivegetcapacity|drivegetlist|driveeject|driveunlock|drivelock|drivesetlabel|controlshowdropdown|controlshow|controlsettab|controlsetexstyle|controlsetstyle|controlsetenabled|controlsetchecked|controlhidedropdown|controlhide|controlgetvisible|controlgettab|controlgetexstyle|controlgetstyle|controlgetselected|controlgetlist|controlgetlinecount|controlgetline|controlgethwnd|controlgetenabled|controlgetcurrentline|controlgetcurrentcol|controlgetchoice|controlgetchecked|controlfinditem|controleditpaste|controldeleteitem|controlchoosestring|controlchoose|controladditem|clipboardall|exitapp|outputdebug|listvars|listlines|edit|winminimizeallundo|winminimizeall|thread|reload|envupdate|coordmode|keyhistory|sendlevel|sendmode|setdefaultmousespeed|setkeydelay|setmousedelay|setcapslockstate|setnumlockstate|setscrolllockstate|setstorecapslockmode|listhotkeys|hotkey|suspend|detecthiddenwindows|detecthiddentext|loadpicture|monitorgetprimary|monitorgetname|monitorgetcount|monitorget|monitorgetworkarea|isobject|islabel|isfunc|isbyref|func|download|shutdown|runas|runwait|run|processwaitclose|processwait|processsetpriority|processclose|processexist|setregview|regwrite|regread|regdelete|regdeletekey|pixelsearch|pixelgetcolor|imagesearch|trim|rtrim|ltrim|substr|strsplit|strreplace|strlen|strlower|strupper|stringcasesense|sort|regexreplace|regexmatch|ord|instr|formattime|format|chr|soundset|soundplay|soundget|soundbeep|setcontroldelay|postmessage|sendmessage|menuselect|controlsettext|menucreate|menufromhandle|controlsend|controlsendraw|controlmove|controlgettext|controlgetpos|controlgetfocus|controlfocus|controlclick|winwaitclose|winwaitnotactive|winwaitactive|winwait|winshow|winsettitle|winsettranscolor|winsettransparent|winsetregion|winsetexstyle|winsetstyle|winredraw|winsetenabled|winmovetop|winmovebottom|winsetalwaysontop|winrestore|winmove|winminimize|winmaximize|winkill|winhide|wingettitle|wingettext|wingetpos|wingetclientpos|wingetclass|wingetexstyle|wingetstyle|wingettranscolor|wingettransparent|wingetcontrolshwnd|wingetcontrols|wingetminmax|wingetlist|wingetcount|wingetprocesspath|wingetprocessname|wingetpid|wingetidlast|wingetid|winexist|winclose|winactive|winactivatebottom|winactivate|il_destroy|il_add|il_create|tooltip|traytip|onmessage|msgbox|menu|inputbox|sleep|sendraw|settimer|onexit|critical|splitpath|setworkingdir|iniwrite|iniread|inidelete|filesettime|filesetattrib|fileselect|filerecycleempty|filerecycle|fileread|fileopen|filecreateshortcut|fileencoding|filegetshortcut|driveget|fileappend|sysget|clipwait|envset|envget|dircopy|dircreate|dirmove|dirdelete|dirselect|filedelete|filecopy|filemove|filegetversion|filegettime|filegetsize|filegetattrib|direxist|fileexist|onclipboardchange|dllcall|numget|numput|callbackcreate|callbackfree|strput|strget|varsetcapacity|varsetlength|comobjactive|comobjarray|comobjconnect|comobjcreate|comobjget|comobject|comobjerror|comobjflags|comobjquery|comobjtype|objaddref|comobjvalue|objrelease|exception|blockinput|click|controlclick|getkeyname|getkeyvk|getkeysc|getkeystate|keywait|input|inputend|mousemove|mouseclick|mouseclickdrag|mousegetpos|sendevent|sendplay|sendinput|send|abs|ceil|dateadd|datediff|exp|floor|log|ln|mod|random|round|sqrt|sin|costan|asin|acos|atan|objrawset|type|cos|objbindmethod|object|array|objpush|objclone|objdelete|objgetaddress|objgetcapacity|objhaskey|objinsertat|objlength|objmaxindex|objminindex|objnewenum|objpop|objpush|objremoveat|objsetcapacity|menugethandle|menugetname)(?=\()\b
+      scope: meta.function.ahk
+
+    - match: \b(?i:__new|__get|__set|__delete)(?=\()\b #^\s*
+      scope: meta.classfunction.ahk
+
+    # Meta Commands
+    - match: ^\s*\b(?i:driveunlock|groupactivate|groupadd|groupclose|groupdeactivate|settitlematchmode|setwindelay|tan|statusbarwait|statusbargettext|guifromhwnd|guictrlfromhwnd|guicreate|drivegetstatus|drivegetstatuscd|drivegettype|drivegetserial|drivegetlabel|drivegetfilesystem|drivegetspacefree|drivegetcapacity|drivegetlist|driveeject|sdriveunlock|drivelock|drivesetlabel|controlshowdropdown|controlshow|controlsettab|controlsetexstyle|controlsetstyle|controlsetenabled|controlsetchecked|controlhidedropdown|controlhide|controlgetvisible|controlgettab|controlgetexstyle|controlgetstyle|controlgetselected|controlgetlist|controlgetlinecount|controlgetline|controlgethwnd|controlgetenabled|controlgetcurrentline|controlgetcurrentcol|controlgetchoice|controlgetchecked|controlfinditem|controleditpaste|controldeleteitem|controlchoosestring|controlchoose|controladditem|outputdebug|listvars|listlines|edit|winminimizeallundo|winminimizeall|thread|envupdate|coordmode|keyhistory|sendlevel|sendmode|setdefaultmousespeed|setkeydelay|setmousedelay|setcapslockstate|setnumlockstate|setscrolllockstate|setstorecapslockmode|listhotkeys|hotkey|suspend|detecthiddenwindows|detecthiddentext|loadpicture|monitorgetprimary|monitorgetname|monitorgetcount|monitorget|monitorgetworkarea|isobject|islabel|isfunc|isbyref|func|download|shutdown|runas|runwait|run|processwaitclose|processwait|processsetpriority|processclose|processexist|setregview|regwrite|regread|regdelete|regdeletekey|pixelsearch|pixelgetcolor|imagesearch|trim|rtrim|ltrim|substr|strsplit|strreplace|strlen|strlower|strupper|stringcasesense|sort|regexreplace|regexmatch|ord|instr|formattime|format|chr|soundset|soundplay|soundget|soundbeep|setcontroldelay|postmessage|sendmessage|menuselect|controlsettext|menucreate|menufromhandle|controlsend|controlsendraw|controlmove|controlgettext|controlgetpos|controlgetfocus|controlfocus|controlclick|winwaitclose|winwaitnotactive|winwaitactive|winwait|winshow|winsettitle|winsettranscolor|winsettransparent|winsetregion|winsetexstyle|winsetstyle|winredraw|winsetenabled|winmovetop|winmovebottom|winsetalwaysontop|winrestore|winmove|winminimize|winmaximize|winkill|winhide|wingettitle|wingettext|wingetpos|wingetclientpos|wingetclass|wingetexstyle|wingetstyle|wingettranscolor|wingettransparent|wingetcontrolshwnd|wingetcontrols|wingetminmax|wingetlist|wingetcount|wingetprocesspath|wingetprocessname|wingetpid|wingetidlast|wingetid|winexist|winclose|winactive|winactivatebottom|winactivate|il_destroy|il_add|il_create|tooltip|traytip|onmessage|msgbox|menu|inputbox|sleep|sendraw|settimer|onexit|critical|splitpath|setworkingdir|iniwrite|iniread|inidelete|filesettime|filesetattrib|fileselect|filerecycleempty|filerecycle|fileread|fileopen|filecreateshortcut|fileencoding|filegetshortcut|driveget|fileappend|sysget|clipwait|envset|envget|dircopy|dircreate|dirmove|dirdelete|dirselect|filedelete|filecopy|filemove|filegetversion|filegettime|filegetsize|filegetattrib|direxist|fileexist|onclipboardchange|dllcall|numget|numput|callbackcreate|callbackfree|strput|strget|varsetcapacity|varsetlength|comobjactive|comobjarray|comobjconnect|comobjcreate|comobjget|comobject|comobjerror|comobjflags|comobjquery|comobjtype|objaddref|comobjvalue|objrelease|exception|blockinput|click|controlclick|getkeyname|getkeyvk|getkeysc|getkeystate|keywait|input|inputend|mousemove|mouseclick|mouseclickdrag|mousegetpos|sendevent|sendplay|sendinput|send|abs|ceil|dateadd|datediff|exp|floor|log|ln|mod|random|round|sqrt|sin|costan|asin|acos|atan|objrawset|type|cos|objbindmethod|object|array|objpush|objclone|objdelete|objgetaddress|objgetcapacity|objhaskey|objinsertat|objlength|objmaxindex|objminindex|objnewenum|objpop|objpush|objremoveat|objsetcapacity|menugethandle|menugetname)(?!,)\b
+      scope: meta.command.ahk
+
+    - match: ^\s*(\w+(?=,))
+      scope: invalid.command.syntax.ahk
+
+    # Meta Preprocessor
+    - match: ^\s*#\b(?i:include|includeagain|allowsamelinecomments|clipboardtimeout|errorstdout|hotkeyinterval|hotkeymodifiertimeout|hotstring|iftimeout|ifwinactive|ifwinexist|ifwinnotactive|ifwinnotexist|if|inputlevel|installkeybdhook|installmousehook|keyhistory|maxhotkeysperinterval|maxthreadsbuffer|maxthreadsperhotkey|maxthreads|menumaskkey|notrayicon|persistent|singleinstance|usehook|warn|winactivateforce)\b
+      scope: meta.preprocessor.ahk
+
+    - match: \b(?i:FileInstall)(?=\()\b
+      scope: meta.preprocessor.ahk
+
+    - match: ^\s*\b(?i:FileInstall)\b
+      scope: meta.preprocessor.ahk
+
+    # Line Comment
+    - match: (^\s*|\s+)(;)(.*)$
+      scope: comment.line.ahk
+      captures:
+        1: comment.line.ahk
+        2: comment.line.ahk
+    
+    # Block Comment
+    - match: /\*
+      scope: comment.block.ahk
+      push:
+        - meta_scope: comment.block.ahk
+        - match: \*/
+          pop: true
+    
+    # Constant Numeric
+    - match: \b((0(x|X)[0-9a-fA-F]+)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b
+      scope: constant.numeric.ahk
+    
+    # Constant Language
+    - match: \b(?i:a_args|a_initialworkingdir|a_ahkpath|a_ahkversion|a_appdata|a_appdatacommon|a_caretx|a_carety|a_computername|a_controldelay|a_cursor|a_dd|a_ddd|a_dddd|a_defaultmousespeed|a_desktop|a_desktopcommon|a_detecthiddentext|a_detecthiddenwindows|a_endchar|a_eventinfo|a_fileencoding|a_hour|a_iconfile|a_iconhidden|a_iconnumber|a_icontip|a_index|a_ipaddress1|a_ipaddress2|a_ipaddress3|a_ipaddress4|a_is64bitos|a_isadmin|a_iscompiled|a_iscritical|a_ispaused|a_issuspended|a_isunicode|a_keydelay|a_language|a_lasterror|a_linefile|a_linenumber|a_loopfield|a_loopfileattrib|a_loopfiledir|a_loopfileext|a_loopfilefullpath|a_loopfilelongpath|a_loopfilename|a_loopfileshortname|a_loopfileshortpath|a_loopfilesize|a_loopfilesizekb|a_loopfilesizemb|a_loopfiletimeaccessed|a_loopfiletimecreated|a_loopfiletimemodified|a_loopreadline|a_loopregkey|a_loopregname|a_loopregtimemodified|a_loopregtype|a_mday|a_min|a_mm|a_mmm|a_mmmm|a_mon|a_mousedelay|a_msec|a_mydocuments|a_now|a_nowutc|a_numbatchlines|a_ostype|a_osversion|a_priorhotkey|a_priorkey|a_comspec|a_programfiles|a_programs|a_programscommon|a_ptrsize|a_regview|a_screendpi|a_screenheight|a_traymenu|a_screenwidth|a_scriptdir|a_scriptfullpath|a_scripthwnd|a_scriptname|a_sec|a_space|a_startmenu|a_startmenucommon|a_startup|a_startupcommon|a_stringcasesense|a_tab|a_temp|a_thisfunc|a_thishotkey|a_thislabel|a_tickcount|a_timeidle|a_timeidlephysical|a_timesincepriorhotkey|a_timesincethishotkey|a_titlematchmode|a_titlematchmodespeed|a_username|a_wday|a_windelay|a_windir|a_workingdir|a_yday|a_year|a_yweek|a_yyyy|clipboard|errorlevel|true|false)\b
+      scope: constant.language.ahk
+    
+    # String Quoted
+    - match: (')
+      push:
+        - meta_scope: string.quoted.single.ahk
+        - match: (')(?!')|^
+          pop: true
+        - match: \`.
+          scope: constant.character.escape.ahk
+
+    - match: (")
+      push:
+        - meta_scope: string.quoted.double.ahk
+        - match: (")(?!")|^
+          pop: true
+        - match: \`.
+          scope: constant.character.escape.ahk
+    
+    # Keyword Control ^((\s|})+|)
+    - match: \b(?i:local|byref|static|global|extends|new|exit|exitapp|gosub|goto|reload|loop|pause|if|else|return|break|for|while|class|catch|finally|throw|try|until|continue)\b
+      scope: keyword.control.ahk
+    
+    # Keyword Operator Assignment
+    - match: '\:=|\+=|-=|\*=|/=|//=|\.=|\|=|\&=|\^=|\>\>=|\<\<=|\~=|\:\:'
+      scope: keyword.operator.assignment.ahk
+
+    # Keyword Operator Arithmetic
+    - match: '\*|/|\+|-'
+      scope: keyword.operator.arithmetic.ahk
+
+    # Keyword Operator Bitwise
+    - match: '~|<<|>>|&|\^|\|'
+      scope: keyword.operator.bitwise.ahk
+
+    # Keyword Operator logical
+    - match: '!|<|>|>=|<=|=|==|=>|<>|!=|\|\||&&|\?|:'
+      scope: keyword.operator.logical.ahk
+    
+    # Keyword Operator Word
+    - match: \b(?<!\.)(?i:or|is|not|and|in|contains)\b
+      scope: keyword.operator.word.ahk
+    
+    # Variable Definition
+    - match: "%"
+      scope: punctuation.definition.variable.ahk
+    
+    # Variable Function (method)
+    - match: \b(?<=\.)(?i:read|write|readline|writeline|readuint|readint|readint64|readuint64|readshort|readushort|readchar|readuchar|readdouble|readfloat|writeuint|writeint|writeint64|writeuint64|writeshort|writeushort|writechar|writeuchar|writedouble|writefloat|rawread|rawwrite|seek|tell|close)(?=\()\b
+      scope: variable.function.ahk
+
+    - match: \b(?<=\.)(?i:insertat|removeat|push|pop|delete|minindex|maxindex|length|setcapacity|getcapacity|getaddress|_newenum|haskey|clone)(?=\()\b
+      scope: variable.function.ahk
+
+    - match: \b(?<=\.)(?i:bind)(?=\()\b
+      scope: variable.function.ahk
+
+    - match: \b(?<=\.)(?i:addtext|addedit|addupdown|addpic|addbutton|addcheckbox|addradio|addddl|addcombobox|addlistbox|addlistview|addtreeview|onevent|addlink|addhotkey|adddatetime|addmonthcal|addslider|addprogress|addgroupbox|addtab3|addstatusbar|addactivex|addcustom)(?=\()\b
+      scope: meta.function.ahk
+
+    # Variable Member (property)
+    - match: '\b(?<=\.)(?i:pos|position|length|ateof|encoding|handle)(?!\[|\(|\.)\b'
+      scope: variable.other.member.ahk
+
+    - match: '\b(?<=\.)(?i:__class)(?!\[|\(|\.)\b'
+      scope: variable.other.member.ahk
+
+    - match: '\b(?i:this)\b' # (?=\.)
+      scope: variable.other.member2.ahk
+
+    - match: '\b(?i:base)\b' # (?<=\.)
+      scope: variable.other.member2.ahk
+
+    # Entity Label
+    - match: ^\s*(\w+)(:)\s*(;.*)?$
+      scope: entity.name.label.ahk
+    
+    # Entity Namespace
+    - match: ^\s*((?!").)+(::)
+      scope: entity.name.namespace.ahk
+
