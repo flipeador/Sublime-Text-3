@@ -1,6 +1,6 @@
 // Archivo de Autocompletar
 // Sintaxis:
-//     {"trigger": "Nombre Elemento", "contents": "Funcion ${1:Parametro 1}, ${2:Parametro 2}"},
+//     {"trigger": "Nombre Elemento\tDescripción", "contents": "Funcion ${1:Parametro 1}, ${2:Parametro 2}"},
 // Caracteres especiales:
 //     \n  = Nueva línea
 //     \t  = TAB
@@ -19,6 +19,10 @@
         {"trigger": "BGR2RGB\t(BGR)", "contents": "($1 & 255) << 16 | ($1 & 65280) | ($1 >> 16)"},
         {"trigger": "RGB2BGR\t(RGB)", "contents": "($1 & 255) << 16) | ((($1 >> 8) & 255) << 8) | ($1 >> 16)"},
         {"trigger": "DestroyMenu\t(Handle)", "contents": "DllCall(\"User32.dll\\DestroyMenu\", \"Ptr\", ${1:Handle})"},
+        {"trigger": "StrLeft\t(String, Length)", "contents": "SubStr(${1:String}, 1, ${2:Length})"},
+        {"trigger": "StrRight\t(String, Length)", "contents": "SubStr(${1:String}, -${2:Length})"},
+        {"trigger": "StrTrimLeft\t(String, Length)", "contents": "SubStr(${1:String}, ${2:Length}+1)"},
+        {"trigger": "StrTrimRight\t(String, Length)", "contents": "SubStr(${1:String}, 1, -${2:Length})"},
 
 
         // ############################################################################################################################################
@@ -196,7 +200,9 @@
         {"trigger": "GuiFromHwnd\t(Hwnd [, RecurseParent := false])", "contents": "GuiFromHwnd($1)"},
         {"trigger": "InputBox\t([Text, Title, Options, Default])", "contents": "InputBox($1)"},
         {"trigger": "LoadPicture\t(Filename [, Options, ByRef ImageType])", "contents": "LoadPicture(${1:FileName})"},
-        {"trigger": "MenuCreate", "contents": "MenuCreate()"},
+        {"trigger": "MenuCreate\tCreates a Menu object", "contents": "MenuCreate()"},
+        {"trigger": "MenuBarCreate\tCreates a MenuBar object", "contents": "MenuBarCreate()"},
+        {"trigger": "TraySetIcon\t([FileName, IconNumber, Freeze])", "contents": "TraySetIcon($1)"},
         {"trigger": "MenuFromHandle\t(Handle)", "contents": "MenuFromHandle(${1:Handle})"},
         {"trigger": "MenuGetHandle\t(MenuName)", "contents": "MenuGetHandle(\"${1:MenuName}\")"},
         {"trigger": "MenuGetName\t(Handle)", "contents": "MenuGetName($1)"},
@@ -442,14 +448,10 @@
         {"trigger": "Trim\t(String [, OmitChars := \"`t\"])", "contents": "Trim(${1:String})"},
         {"trigger": "LTrim\t(String [, OmitChars := \"`t\"])", "contents": "LTrim(${1:String})"},
         {"trigger": "RTrim\t(String [, OmitChars := \"`t\"])", "contents": "RTrim(${1:String})"},
-        {"trigger": "StrLeft\t(String, Length)", "contents": "SubStr(${1:String}, 1, ${2:Length})"},
         {"trigger": "StrLen\t(String)", "contents": "StrLen(${1:String})"},
         {"trigger": "StrLower\t(String)", "contents": "Format(\"{:L}\", ${1:String})"},
         {"trigger": "StrReplace\t(Haystack, SearchText , ReplaceText, OutCount, Limit)", "contents": "StrReplace(${1:Haystack}, ${2:SearchText})"},
-        {"trigger": "StrRight\t(String, Length)", "contents": "SubStr(${1:String}, -${2:Length})"},
         {"trigger": "StrSplit\t(String [, Delimiters, OmitChars])", "contents": "StrSplit(${1:String})"},
-        {"trigger": "StrTrimLeft\t(String, Length)", "contents": "SubStr(${1:String}, ${2:Length}+1)"},
-        {"trigger": "StrTrimRight\t(String, Length)", "contents": "SubStr(${1:String}, 1, -${2:Length})"},
         {"trigger": "StrUpper\t(String)", "contents": "Format(\"{:U}\", ${1:String})"},
         {"trigger": "SubStr\t(String, StartingPos [, Length])", "contents": "SubStr(${1:String}, ${2:StartingPos})"},
         {"trigger": "InStr\t(Haystack, Needle [, CaseSensitive := false, StartingPos := 1, Occurrence := 1])", "contents": "InStr(${1:Haystack}, ${2:Needle})"},
@@ -692,5 +694,6 @@
         {"trigger": "FALSE\t0", "contents": "FALSE"},
         {"trigger": "A_Quote\t\"", "contents": "Chr(34)"},
         {"trigger": "A_TrayMenu", "contents": "A_TrayMenu"},
+        {"trigger": "A_AllowMainWindow\tRead/write", "contents": "A_AllowMainWindow"},
     ]
 }
