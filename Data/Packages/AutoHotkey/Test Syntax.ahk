@@ -6,39 +6,48 @@
 */
 
 
-; Comentario normal
+; Comentario en bloque
 /*
-    Comentario en bloque
+    Línea #1 -
+    Línea #2 -
 */
+var := value    /* XXX */
 
 
 ; Directivas
-#Include Functions.ahk
+#Include <funciones>
+#IncludeAgain C:\Funciones.ahk
 #SingleInstance Force
 #NoTrayIcon
 
 
 ; Operadores, expresiones y números
-Foo := (Bar = Var && Bar2 == Var2) || !Bar = ~Var2 ? 0x101 : 23.48
-Exp := New ClassObj(Obj.Var * Obj.Fn(++a, b++, --c, e++))
+Foo := (Bar = *Var && Bar2 == Var2) || !Bar = ~Var2 ? 0x101 : 23.48
+Exp := new ClassObj(Obj.Var * Obj.Fn(++a, b++, --c, e++))
 Exp := -0.2**(34&1) // 2 / 1 << 2 >> 3 - (4 ^ 3)
 Exp := (A -= 3) - (B += 4) + (C ~= 5) * (D ^ 7) / (5>=2) // (6<3) - (Z!=Y)
 Exp := (Z>>=2) - (Z//=D) * Mod(2, 3) - %fnc%()[2]
+Fnc := Func("myfunc")
+Fnc := (p1,p2,p3) => p1+p2+p3    ; lambda
 Obj := {A: 43, B: 498, (Var): 10.48, H: 0xFF, [1, 2, "ABC"]}
 
 
-; Cadena. Secuencia de escape. Concatenation
-Var := "This is a " . "test`n"
-Var := 'This is a ' . 'test`n'
+; Cadenas, secuencias de escape y concatenación
+Str := "Este es un ejemplo"
+Str := 'Este es un ejemplo'
+Str := "`"Este es un ejemplo`""
+Str := "Este 'es 'un' ejemplo"
+Str := 'Este "es "un" ejemplo'
 
 
-; Comandos. Funciones incorporadas
-MsgBox vText, "Title", 0
-Clipboard := clipboardall()
-DllCall("DllFile\Func", "Ptr", &Address, "Str", "Hello World!", "Cdecl UShort")
+; Variables y Funciones incorporadas
+MsgBox Text, Title . A_UserName, Options
+ClipSaved := clipboardall()
+Clipboard := ClipSaved
+DllCall("DllFile\Func", "UPtr", &Address, "Int", Round(n, 2), "Str", "Hola Mundo!", "Cdecl UShort")
 
 
-; Funciones del usuario
+; Otras funciones
 My_Function("String", 23 ** 1024, {}, [])
 
 My_Function(Cadena, Valor, Otro*)
@@ -46,27 +55,34 @@ My_Function(Cadena, Valor, Otro*)
     Return (Cadena . ": " . Floor(Valor, 2))
 }
 
-My_Function2(p*) {
+My_Function2(a := 0xFF, p*) {
     Static A := 0
-    Return (++A)
+    Local C := 1
+    Return ++A + C
 }
 
-; Desreferencia
-Foo := %Bar%
 
-; Propiedades. Métodos. Clases.
+; Desreferencia y objetos
+Foo := %Bar%
+Arr := [value1, value2, ..]
+Obj := {key1: value, key2: value
+                   , key3: value, ..}
+
+
+; Propiedades, métodos y clases.
 __New()
 __Delete()
 File.Read(This.Pos + This.base + This.base.Pos)
-File.__Handle
+File.Handle
 File.Seek()
 File.Pos
 File.ReadUChar()
 Obj.__Class
 Obj.InsertAt()
-Obj.__NewEnum()
+Obj._NewEnum()
 Obj.Method(Extends * 2)
 Class ClassName Extends BaseClassName
+
 
 ; Palabras claves. Variables incorporadas.
 If (TRUE)
@@ -83,13 +99,17 @@ If ((!FALSE) && (TRUE) AND (TRUE))
 {
     ; Teclas y botones
     SendInput("Texto{F1}")
-    ; Error de sintaxis
-    MyVar = 0xF . 0x . 0. .0 . 0.4 . "This is a test%
 }
 
-; Etiquetas. Hotkey. hotstring
+
+; Etiquetas, teclas y reasignaciones
 Label:
-#v::MsgBox("Has presionado Win+V")
+#v:: MsgBox("Has presionado Win+V")
+CTRL & P:: Suspend(-1)
 ::btw::by the way
 Return
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .
+
+; Errores de sintaxis
+Var = Value
+Var := "Este es un ejemplo
+Función, param1, param2

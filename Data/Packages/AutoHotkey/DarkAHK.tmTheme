@@ -170,6 +170,17 @@
 				<string>italic</string>
 			</dict>
 		</dict>
+        <dict>
+            <key>scope</key>
+            <string>punctuation.definition.comment</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>mediumseagreen</string>
+                <key>fontStyle</key>
+                <string>italic bold</string>
+            </dict>
+        </dict>
 		<!-- Line Comment -->
 		<dict>
 			<key>scope</key>
@@ -357,20 +368,10 @@
 		<!-- ############################################### -->
 		<!-- Meta Scope                                   -->
 		<!-- ############################################### -->
-		<!-- Block -->
-		<dict>
-			<key>scope</key>
-			<string>meta.block</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>lightyellow4</string>
-			</dict>
-		</dict>
 		<!-- Braces -->
 		<dict>
 			<key>scope</key>
-			<string>meta.parens</string>
+			<string>meta.braces</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -416,7 +417,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>sgibeet</string>
+				<string>#B362A7</string>
 			</dict>
 		</dict>
 
@@ -559,7 +560,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#3737FF</string>
+                <string>#4242FF</string>
             </dict>
         </dict>
         <dict>
@@ -867,17 +868,6 @@
                 <string>#3299CC</string>
                 <key>foreground</key>
                 <string>#191B1F</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Punctuation def comment</string>
-            <key>scope</key>
-            <string>punctuation.definition.comment</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#404449</string>
             </dict>
         </dict>
         <dict>

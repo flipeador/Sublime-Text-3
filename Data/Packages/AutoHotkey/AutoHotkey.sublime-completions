@@ -23,6 +23,7 @@
         {"trigger": "StrRight\t(String, Length)", "contents": "SubStr(${1:String}, -${2:Length})"},
         {"trigger": "StrTrimLeft\t(String, Length)", "contents": "SubStr(${1:String}, ${2:Length}+1)"},
         {"trigger": "StrTrimRight\t(String, Length)", "contents": "SubStr(${1:String}, 1, -${2:Length})"},
+        {"trigger": "PI\t3.14159..", "contents": "ACos(-1)"},
 
 
         // ############################################################################################################################################
@@ -126,7 +127,7 @@
         // # Flow Of Control                                                                                                                          #
         // ############################################################################################################################################
         {"trigger": "Sleep\t(DelayInMilliseconds)", "contents": "Sleep(${1:DelayInMilliseconds})"},
-        {"trigger": "Suspend\t(\"On|Off|Toggle|Permit\")", "contents": "Suspend(${1:true})"},
+        {"trigger": "Suspend\t(0(OFF)|1(ON)|-1(Toggle))", "contents": "Suspend($1)"},
         {"trigger": "Tan\t(Number)", "contents": "Tan($1)"},
         {"trigger": "Thread\t(\"NoTimers|Priority|Interrupt\" [, false|n|Duration, LineCount])", "contents": "Thread(\"$1\")"},
         {"trigger": "Throw\t[Expression]", "contents": "Throw Exception(\"${1:Message}\", \"${2:What}\", \"${3:Extra}\")"},
@@ -278,6 +279,8 @@
         {"trigger": "Log\t(Number)", "contents": "Log($1)"},
         {"trigger": "Ln\t(Number)", "contents": "Ln($1)"},
         {"trigger": "Sin\t(Number)", "contents": "Sin($1)"},
+        {"trigger": "Max\t(Number1 [, Number2, ...])", "contents": "Max($1)"},
+        {"trigger": "Min\t(Number1 [, Number2, ...])", "contents": "Min($1)"},
 
 
         // ############################################################################################################################################
@@ -552,6 +555,7 @@
         {"trigger": "#UseHook\tOn|Off", "contents": "#UseHook ${1:On}"},
         {"trigger": "#Warn\t[WarningType, WarningMode]", "contents": "#Warn"},
         {"trigger": "#WinActivateForce", "contents": "#WinActivateForce"},
+        {"trigger": "#SuspendExempt\t[Exempt = *TRUE/FALSE]", "contents": "#SuspendExempt"},
 
 
         // ############################################################################################################################################
