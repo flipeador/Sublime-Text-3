@@ -110,6 +110,17 @@
 				<string>hotpink3</string>
 			</dict>
 		</dict>
+        <dict>
+            <key>scope</key>
+            <string>entity.name.namespace2</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#B43870</string>
+                <key>fontStyle</key>
+                <string>bold</string>
+            </dict>
+        </dict>
 
 		<!-- ############################################### -->
 		<!-- Variable Scope                                  -->
@@ -265,37 +276,15 @@
 		<!-- ############################################### -->
 		<!-- Invalid Scope                                   -->
 		<!-- ############################################### -->
-		<!-- Invalid Deprecated -->
-		<dict>
-			<key>scope</key>
-			<string>invalid.deprecated</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>burlywood</string>
-			</dict>
-		</dict>
-		<!-- closing Brackets Without Open Bracket -->
-		<dict>
-			<key>scope</key>
-			<string>invalid.illegal.stray-bracket-end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>black</string>
-				<key>background</key>
-				<string>red</string>
-			</dict>
-		</dict>
         <dict>
             <key>scope</key>
-            <string>invalid.command.syntax</string>
+            <string>invalid.general.syntax</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
                 <string>black</string>
                 <key>background</key>
-                <string>crimson</string>
+                <string>#F25A55</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -361,7 +350,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>sgibeet</string>
+				<string>#B362A7</string>
 			</dict>
 		</dict>
 
@@ -417,7 +406,9 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#B362A7</string>
+				<string>#57ACAC</string>
+                <key>fontStyle</key>
+                <string>bold</string>
 			</dict>
 		</dict>
 

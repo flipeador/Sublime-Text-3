@@ -58,7 +58,7 @@ scope          : source.ahk
 
 contexts:
   main:
-    # Meta Braces: {}
+    # Meta Braces: [] {} ()
     - match: '[\[\]{}\(\)]'
       scope: meta.braces.ahk
 
@@ -74,7 +74,7 @@ contexts:
       scope: meta.command.ahk
 
     - match: ^\s*(\w+(?=,))
-      scope: invalid.command.syntax.ahk
+      scope: invalid.general.syntax.ahk
 
     # Meta Preprocessor
     - match: ^\s*#\b(?i:suspendexempt|include|includeagain|allowsamelinecomments|clipboardtimeout|errorstdout|hotkeyinterval|hotkeymodifiertimeout|hotstring|iftimeout|ifwinactive|ifwinexist|ifwinnotactive|ifwinnotexist|if|inputlevel|installkeybdhook|installmousehook|keyhistory|maxhotkeysperinterval|maxthreadsbuffer|maxthreadsperhotkey|maxthreads|menumaskkey|notrayicon|persistent|singleinstance|usehook|warn|winactivateforce)\b
@@ -136,22 +136,40 @@ contexts:
       scope: keyword.operator.assignment.ahk
 
     # Keyword Operator Arithmetic
+    - match: '(\*|\+|-){3,}|\s+(\+|-){2,}\s+'
+      scope: invalid.general.syntax.ahk
+
     - match: '\*|/|\+|-'
       scope: keyword.operator.arithmetic.ahk
-
-    # Keyword Operator Bitwise
-    - match: '~|<<|>>|&|\^|\|'
-      scope: keyword.operator.bitwise.ahk
-
-    # Keyword Operator logical
-    - match: '!|<|>|>=|<=|=|==|=>|<>|!=|\|\||&&|\?|:'
-      scope: keyword.operator.logical.ahk
     
     # Keyword Operator Word
     - match: \b(?<!\.)(?i:or|is|not|and|in|contains)\b
       scope: keyword.operator.word.ahk
-    
+
+    - match: '(\||&){3,}'
+      scope: invalid.general.syntax.ahk
+
+    - match: \|\||&&  # OR | AND
+      scope: keyword.operator.word.ahk
+
+    # Keyword Operator Bitwise
+    - match: '(<|>){3,}|(\^|~){2,}'
+      scope: invalid.general.syntax.ahk
+
+    - match: '~|<<|>>|&|\^|\|'
+      scope: keyword.operator.bitwise.ahk
+
+    # Keyword Operator logical
+    - match: '(!|=){3,}'
+      scope: invalid.general.syntax.ahk
+
+    - match: '!|<|>|>=|<=|=|==|=>|<>|!=|\?|:'
+      scope: keyword.operator.logical.ahk
+
     # Variable Definition
+    - match: '%{2,}'
+      scope: invalid.general.syntax.ahk
+
     - match: "%"
       scope: punctuation.definition.variable.ahk
     
@@ -188,3 +206,6 @@ contexts:
     # Entity Namespace (Hotkeys)
     - match: ^\s*((?!"|;|{).)+(::)
       scope: entity.name.namespace.ahk
+      captures:
+        1: entity.name.namespace.ahk
+        2: entity.name.namespace2.ahk

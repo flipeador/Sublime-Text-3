@@ -136,7 +136,7 @@
         {"trigger": "While\t(Expression)", "contents": "While (${1:Expression})"},
         {"trigger": "Break\t[LoopLabel]", "contents": "Break"},
         {"trigger": "Catch\t[OutputVar]", "contents": "Catch"},
-        {"trigger": "Continue\t[LoopLabel]", "contents": "Continue"},
+        {"trigger": "Continue\t[LoopLabel|NestingLevel]", "contents": "Continue"},
         {"trigger": "Loop\t([Count])", "contents": "Loop"},
         //{"trigger": "Loop Until", "contents": "Loop\n\t;$1\nUntil (Expression)"},
         {"trigger": "OnExit\t(Func [, AddRemove])", "contents": "OnExit(${1:Func})"},
