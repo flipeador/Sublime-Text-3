@@ -1,11 +1,11 @@
 ﻿<!--
-	COLOR SCHEME
-	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    COLOR SCHEME
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	Name:		Sublime Text Dark Theme
-    Author:		Flipeador (https://autohotkey.com/boards/memberlist.php?mode=viewprofile&u=60315) | flipeador@gmail.com
-    License:	Public Domain Mark 1.0
-    URL:		https://github.com/flipeador
+    Name:        Sublime Text Dark Theme
+    Author:        Flipeador (https://autohotkey.com/boards/memberlist.php?mode=viewprofile&u=60315) | flipeador@gmail.com
+    License:    Public Domain Mark 1.0
+    URL:        https://github.com/flipeador
 
     Ported sublime theme based off of (https://github.com/philpl/Adventurous-Syntax)
 
@@ -21,95 +21,95 @@
 <dict>
     <key>author</key>
     <string>Flipeador</string>
-	<key>name</key>
-	<string>DarkAHK</string>
+    <key>name</key>
+    <string>DarkAHK</string>
     <key>semanticClass</key>
     <string>DarkAHK</string>
-	<key>settings</key>
-	<array>
+    <key>settings</key>
+    <array>
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
-		<!-- ############################################### -->
-		<!-- Global Settings                                 -->
-		<!-- ############################################### -->
-		<dict>
-			<key>settings</key>
-			<dict>
-				<!-- General -->
-				<key>background</key>
-				<string>#191B1F</string>
-				<key>foreground</key>
-				<string>#BFD7DB</string>
-				<key>caret</key>
-				<string>gold2</string>
-				<key>lineHighlight</key>
-				<string>#30343B</string>
+        <!-- ############################################### -->
+        <!-- Global Settings                                 -->
+        <!-- ############################################### -->
+        <dict>
+            <key>settings</key>
+            <dict>
+                <!-- General -->
+                <key>background</key>
+                <string>#191B1F</string>
+                <key>foreground</key>
+                <string>#BFD7DB</string>
+                <key>caret</key>
+                <string>gold2</string>
+                <key>lineHighlight</key>
+                <string>#30343B</string>
                 <key>invisibles</key>
                 <string>#3B3A32</string>
                 <key>activeGuide</key>
                 <string>#9D550FB0</string>
-				<!-- Selection -->
-				<key>selection</key>
-				<string>#30343B</string>
+                <!-- Selection -->
+                <key>selection</key>
+                <string>#30343B</string>
                 <key>selectionBorder</key>
                 <string>#5A5F6B</string>
-				<!-- Accents -->
-				<key>misspelling</key>
-				<string>red</string>
-				<!-- Find -->
-				<key>highlight</key>
-				<string>#FFE792</string>
+                <!-- Accents -->
+                <key>misspelling</key>
+                <string>red</string>
+                <!-- Find -->
+                <key>highlight</key>
+                <string>#FFE792</string>
                 <key>findHighlight</key>
                 <string>#FFE792</string>
                 <key>findHighlightForeground</key>
                 <string>#000000</string>
-				<!-- Brackets -->
-				<key>bracketsOptions</key>
-				<string>foreground</string>
-				<key>bracketsForeground</key>
-				<string>purple2</string>
-				<key>bracketContentsOptions</key>
-				<string>foreground</string>
-				<key>bracketContentsForeground</key>
-				<string>purple2</string>
-				<!-- Tags -->
-				<key>tagsOptions</key>
-				<string>stippled_underline</string>
-				<key>tagsForeground</key>
-				<string>gold</string>
-				<!-- Shadows -->
-				<key>shadow</key>
-				<string>blue</string>
-				<key>shadowWidth</key>
-				<string>4</string>
-			</dict>
-		</dict>
+                <!-- Brackets -->
+                <key>bracketsOptions</key>
+                <string>foreground</string>
+                <key>bracketsForeground</key>
+                <string>purple2</string>
+                <key>bracketContentsOptions</key>
+                <string>foreground</string>
+                <key>bracketContentsForeground</key>
+                <string>purple2</string>
+                <!-- Tags -->
+                <key>tagsOptions</key>
+                <string>stippled_underline</string>
+                <key>tagsForeground</key>
+                <string>gold</string>
+                <!-- Shadows -->
+                <key>shadow</key>
+                <string>blue</string>
+                <key>shadowWidth</key>
+                <string>4</string>
+            </dict>
+        </dict>
 
-		<!-- ############################################### -->
-		<!-- Entity Scope                                    -->
-		<!-- ############################################### -->
-		<!-- Name Label -->
-		<dict>
-			<key>scope</key>
-			<string>entity.name.label</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>slateblue2</string>
-				<key>fontStyle</key>
-				<string>bold</string>
-			</dict>
-		</dict>
-		<!-- Name Namespace -->
-		<dict>
-			<key>scope</key>
-			<string>entity.name.namespace</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>hotpink3</string>
-			</dict>
-		</dict>
+        <!-- ############################################### -->
+        <!-- Entity Scope                                    -->
+        <!-- ############################################### -->
+        <!-- Name Label -->
+        <dict>
+            <key>scope</key>
+            <string>entity.name.label</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>slateblue2</string>
+                <key>fontStyle</key>
+                <string>bold</string>
+            </dict>
+        </dict>
+        <!-- Name Namespace -->
+        <dict>
+            <key>scope</key>
+            <string>entity.name.namespace</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>hotpink3</string>
+            </dict>
+        </dict>
         <dict>
             <key>scope</key>
             <string>entity.name.namespace2</string>
@@ -122,65 +122,65 @@
             </dict>
         </dict>
 
-		<!-- ############################################### -->
-		<!-- Variable Scope                                  -->
-		<!-- ############################################### -->
-		<!-- Variable Definition -->
-		<dict>
-			<key>scope</key>
-			<string>punctuation.definition.variable</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>lightskyblue3</string>
-			</dict>
-		</dict>
-		<!-- Variable Function -->
-		<dict>
-			<key>scope</key>
-			<string>variable.function</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>turquoise3</string>
-			</dict>
-		</dict>
-		<!-- Variable Member -->
-		<dict>
-			<key>scope</key>
-			<string>variable.other.member</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>turquoise1</string>
-			</dict>
-		</dict>
-		<!-- Variable Member 2 -->
-		<dict>
-			<key>scope</key>
-			<string>variable.other.member2</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>yellowgreen</string>
-			</dict>
-		</dict>
+        <!-- ############################################### -->
+        <!-- Variable Scope                                  -->
+        <!-- ############################################### -->
+        <!-- Variable Definition -->
+        <dict>
+            <key>scope</key>
+            <string>punctuation.definition.variable</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>lightskyblue3</string>
+            </dict>
+        </dict>
+        <!-- Variable Function -->
+        <dict>
+            <key>scope</key>
+            <string>variable.function</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>turquoise3</string>
+            </dict>
+        </dict>
+        <!-- Variable Member -->
+        <dict>
+            <key>scope</key>
+            <string>variable.other.member</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>turquoise1</string>
+            </dict>
+        </dict>
+        <!-- Variable Member 2 -->
+        <dict>
+            <key>scope</key>
+            <string>variable.other.member2</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>yellowgreen</string>
+            </dict>
+        </dict>
 
-		<!-- ############################################### -->
-		<!-- Comment Scope                                   -->
-		<!-- ############################################### -->
-		<!-- Block Comment -->
-		<dict>
-			<key>scope</key>
-			<string>comment.block</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>mediumseagreen</string>
-				<key>fontStyle</key>
-				<string>italic</string>
-			</dict>
-		</dict>
+        <!-- ############################################### -->
+        <!-- Comment Scope                                   -->
+        <!-- ############################################### -->
+        <!-- Block Comment -->
+        <dict>
+            <key>scope</key>
+            <string>comment.block</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>mediumseagreen</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
         <dict>
             <key>scope</key>
             <string>punctuation.definition.comment</string>
@@ -192,90 +192,90 @@
                 <string>italic bold</string>
             </dict>
         </dict>
-		<!-- Line Comment -->
-		<dict>
-			<key>scope</key>
-			<string>comment.line</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>forestgreen</string>
-				<key>fontStyle</key>
-				<string>italic</string>
-			</dict>
-		</dict>
+        <!-- Line Comment -->
+        <dict>
+            <key>scope</key>
+            <string>comment.line</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>forestgreen</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+            </dict>
+        </dict>
 
-		<!-- ############################################### -->
-		<!-- Constant Scope                                  -->
-		<!-- ############################################### -->
-		<!-- Numeric -->
-		<dict>
-			<key>scope</key>
-			<string>constant.numeric</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>orange</string>
-			</dict>
-		</dict>
-		<!-- language -->
-		<dict>
-			<key>scope</key>
-			<string>constant.language</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>steelblue1</string>
-			</dict>
-		</dict>
-		<!-- Character Escape -->
-		<dict>
-			<key>scope</key>
-			<string>constant.character.escape</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>grey51</string>
-			</dict>
-		</dict>
+        <!-- ############################################### -->
+        <!-- Constant Scope                                  -->
+        <!-- ############################################### -->
+        <!-- Numeric -->
+        <dict>
+            <key>scope</key>
+            <string>constant.numeric</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>orange</string>
+            </dict>
+        </dict>
+        <!-- language -->
+        <dict>
+            <key>scope</key>
+            <string>constant.language</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>steelblue1</string>
+            </dict>
+        </dict>
+        <!-- Character Escape -->
+        <dict>
+            <key>scope</key>
+            <string>constant.character.escape</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>grey51</string>
+            </dict>
+        </dict>
 
-		<!-- ############################################### -->
-		<!-- String Scope                                   -->
-		<!-- ############################################### -->
-		<!-- Quoted Single -->
-		<dict>
-			<key>scope</key>
-			<string>string.quoted.single</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>salmon1</string>
-			</dict>
-		</dict>
-		<!-- Quoted Double -->
-		<dict>
-			<key>scope</key>
-			<string>string.quoted.double</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>salmon3</string>
-			</dict>
-		</dict>
-		<!-- Character Escape -->
-		<dict>
-			<key>scope</key>
-			<string>constant.character.escape</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>lightsalmon4</string>
-			</dict>
-		</dict>
+        <!-- ############################################### -->
+        <!-- String Scope                                   -->
+        <!-- ############################################### -->
+        <!-- Quoted Single -->
+        <dict>
+            <key>scope</key>
+            <string>string.quoted.single</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>salmon1</string>
+            </dict>
+        </dict>
+        <!-- Quoted Double -->
+        <dict>
+            <key>scope</key>
+            <string>string.quoted.double</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>salmon3</string>
+            </dict>
+        </dict>
+        <!-- Character Escape -->
+        <dict>
+            <key>scope</key>
+            <string>constant.character.escape</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>lightsalmon4</string>
+            </dict>
+        </dict>
 
-		<!-- ############################################### -->
-		<!-- Invalid Scope                                   -->
-		<!-- ############################################### -->
+        <!-- ############################################### -->
+        <!-- Invalid Scope                                   -->
+        <!-- ############################################### -->
         <dict>
             <key>scope</key>
             <string>syntax.error</string>
@@ -290,127 +290,127 @@
             </dict>
         </dict>
 
-		<!-- ############################################### -->
-		<!-- Keyword Scope                                   -->
-		<!-- ############################################### -->
-		<!-- Control -->
-		<dict>
-			<key>scope</key>
-			<string>keyword.control</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>royalblue1</string>
-			</dict>
-		</dict>
-		<!-- Operator Assignment -->
-		<dict>
-			<key>scope</key>
-			<string>keyword.operator.assignment</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>violetred3</string>
-			</dict>
-		</dict>
-		<!-- Operator Arithmetic -->
-		<dict>
-			<key>scope</key>
-			<string>keyword.operator.arithmetic</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>red</string>
-			</dict>
-		</dict>
-		<!-- Operator Bitwise -->
-		<dict>
-			<key>scope</key>
-			<string>keyword.operator.bitwise</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>firebrick3</string>
-			</dict>
-		</dict>
-		<!-- Operator logical -->
-		<dict>
-			<key>scope</key>
-			<string>keyword.operator.logical</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>lightslateblue</string>
-			</dict>
-		</dict>
-		<!-- Operator Word -->
-		<dict>
-			<key>scope</key>
-			<string>keyword.operator.word</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#B362A7</string>
-			</dict>
-		</dict>
+        <!-- ############################################### -->
+        <!-- Keyword Scope                                   -->
+        <!-- ############################################### -->
+        <!-- Control -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.control</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>royalblue1</string>
+            </dict>
+        </dict>
+        <!-- Operator Assignment -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator.assignment</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>violetred3</string>
+            </dict>
+        </dict>
+        <!-- Operator Arithmetic -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator.arithmetic</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>red</string>
+            </dict>
+        </dict>
+        <!-- Operator Bitwise -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator.bitwise</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>firebrick3</string>
+            </dict>
+        </dict>
+        <!-- Operator logical -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator.logical</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>lightslateblue</string>
+            </dict>
+        </dict>
+        <!-- Operator Word -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator.word</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#B362A7</string>
+            </dict>
+        </dict>
 
-		<!-- ############################################### -->
-		<!-- Meta Scope                                   -->
-		<!-- ############################################### -->
-		<!-- Braces -->
-		<dict>
-			<key>scope</key>
-			<string>meta.braces</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>lightyellow4</string>
-			</dict>
-		</dict>
-		<!-- Functions -->
-		<dict>
-			<key>scope</key>
-			<string>meta.function</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>yellow2</string>
-			</dict>
-		</dict>
-		<!-- Class Functions -->
-		<dict>
-			<key>scope</key>
-			<string>meta.classfunction</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>yellowgreen</string>
-				<key>fontStyle</key>
-				<string>bold</string>
-			</dict>
-		</dict>
-		<!-- Commands -->
-		<dict>
-			<key>scope</key>
-			<string>meta.command</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>yellow</string>
-			</dict>
-		</dict>
-		<!-- Preprocessor -->
-		<dict>
-			<key>scope</key>
-			<string>meta.preprocessor</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#57ACAC</string>
+        <!-- ############################################### -->
+        <!-- Meta Scope                                   -->
+        <!-- ############################################### -->
+        <!-- Braces -->
+        <dict>
+            <key>scope</key>
+            <string>meta.braces</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>lightyellow4</string>
+            </dict>
+        </dict>
+        <!-- Functions -->
+        <dict>
+            <key>scope</key>
+            <string>meta.function</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>yellow2</string>
+            </dict>
+        </dict>
+        <!-- Class Functions -->
+        <dict>
+            <key>scope</key>
+            <string>meta.classfunction</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>yellowgreen</string>
                 <key>fontStyle</key>
                 <string>bold</string>
-			</dict>
-		</dict>
+            </dict>
+        </dict>
+        <!-- Commands -->
+        <dict>
+            <key>scope</key>
+            <string>meta.command</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>yellow</string>
+            </dict>
+        </dict>
+        <!-- Preprocessor -->
+        <dict>
+            <key>scope</key>
+            <string>meta.preprocessor</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#57ACAC</string>
+                <key>fontStyle</key>
+                <string>bold</string>
+            </dict>
+        </dict>
 
 
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
@@ -894,9 +894,9 @@
                 <string>#277BD3</string>
             </dict>
         </dict>
-	</array>
-	<key>colorSpaceName</key>
-	<string>sRGB</string>
+    </array>
+    <key>colorSpaceName</key>
+    <string>sRGB</string>
 </dict>
 </plist>
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->

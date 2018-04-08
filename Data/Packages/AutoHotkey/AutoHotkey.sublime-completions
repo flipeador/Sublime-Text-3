@@ -24,6 +24,7 @@
         {"trigger": "StrTrimLeft\t(String, Length)", "contents": "SubStr(${1:String}, ${2:Length}+1)"},
         {"trigger": "StrTrimRight\t(String, Length)", "contents": "SubStr(${1:String}, 1, -${2:Length})"},
         {"trigger": "PI\t3.14159..", "contents": "ACos(-1)"},
+        {"trigger": "RtlAdjustPrivilege\t(PrivilegeN, Enable?)", "contents": "DllCall(\"Ntdll.dll\\RtlAdjustPrivilege\", \"UInt\", ${1:PrivilegeN}, \"UChar\", ${2:TRUE}, \"UChar\", FALSE, \"IntP\", t)"},
 
 
         // ############################################################################################################################################

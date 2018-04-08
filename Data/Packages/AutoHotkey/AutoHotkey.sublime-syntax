@@ -59,7 +59,7 @@ scope          : source.ahk
 contexts:
   main:
     # Meta Braces: [] {} ()
-    - match: '[\[\]{}\(\)]'
+    - match: '[\[\]\{\}\(\)]'
       scope: meta.braces.ahk
 
     # Meta Functions
@@ -90,7 +90,7 @@ contexts:
     - match: (^\s*|\s+)(;)(.*)$
       scope: comment.line.ahk
       captures:
-        1: comment.line.ahk
+        1: comment.line.ahk  # ;
         2: comment.line.ahk
     
     # Block Comment
@@ -208,4 +208,4 @@ contexts:
       scope: entity.name.namespace.ahk
       captures:
         1: entity.name.namespace.ahk
-        2: entity.name.namespace2.ahk
+        2: entity.name.namespace2.ahk  # ::
