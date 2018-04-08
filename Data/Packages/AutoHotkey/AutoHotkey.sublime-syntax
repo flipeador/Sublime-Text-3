@@ -74,7 +74,7 @@ contexts:
       scope: meta.command.ahk
 
     - match: ^\s*(\w+(?=,))
-      scope: invalid.general.syntax.ahk
+      scope: syntax.error.ahk
 
     # Meta Preprocessor
     - match: ^\s*#\b(?i:suspendexempt|include|includeagain|allowsamelinecomments|clipboardtimeout|errorstdout|hotkeyinterval|hotkeymodifiertimeout|hotstring|iftimeout|ifwinactive|ifwinexist|ifwinnotactive|ifwinnotexist|if|inputlevel|installkeybdhook|installmousehook|keyhistory|maxhotkeysperinterval|maxthreadsbuffer|maxthreadsperhotkey|maxthreads|menumaskkey|notrayicon|persistent|singleinstance|usehook|warn|winactivateforce)\b
@@ -137,7 +137,7 @@ contexts:
 
     # Keyword Operator Arithmetic
     - match: '(\*|\+|-){3,}|\s+(\+|-){2,}\s+'
-      scope: invalid.general.syntax.ahk
+      scope: syntax.error.ahk
 
     - match: '\*|/|\+|-'
       scope: keyword.operator.arithmetic.ahk
@@ -147,28 +147,28 @@ contexts:
       scope: keyword.operator.word.ahk
 
     - match: '(\||&){3,}'
-      scope: invalid.general.syntax.ahk
+      scope: syntax.error.ahk
 
     - match: \|\||&&  # OR | AND
       scope: keyword.operator.word.ahk
 
     # Keyword Operator Bitwise
     - match: '(<|>){3,}|(\^|~){2,}'
-      scope: invalid.general.syntax.ahk
+      scope: syntax.error.ahk
 
     - match: '~|<<|>>|&|\^|\|'
       scope: keyword.operator.bitwise.ahk
 
     # Keyword Operator logical
     - match: '(!|=){3,}'
-      scope: invalid.general.syntax.ahk
+      scope: syntax.error.ahk
 
     - match: '!|<|>|>=|<=|=|==|=>|<>|!=|\?|:'
       scope: keyword.operator.logical.ahk
 
     # Variable Definition
     - match: '%{2,}'
-      scope: invalid.general.syntax.ahk
+      scope: syntax.error.ahk
 
     - match: "%"
       scope: punctuation.definition.variable.ahk
