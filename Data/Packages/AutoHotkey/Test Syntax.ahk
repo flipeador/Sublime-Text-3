@@ -113,4 +113,4 @@ Return
 Var = Value
 Var := "Este es un ejemplo
 Función, param1, param2
-Var := a ++ b -- c *** ACos(-1) ||| 1 &&&&& 3
+Var := a ++ b ++x * y++ -- c *** ACos(-1) ||| 1 &&&&& 3
