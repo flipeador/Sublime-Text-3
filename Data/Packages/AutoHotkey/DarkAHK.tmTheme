@@ -107,7 +107,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>hotpink3</string>
+                <string>#F957AC</string>
             </dict>
         </dict>
         <dict>
@@ -132,7 +132,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>lightskyblue3</string>
+                <string>#97D5DC</string>
             </dict>
         </dict>
         <!-- Variable Function -->
@@ -142,7 +142,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>turquoise3</string>
+                <string>#027EEC</string>
             </dict>
         </dict>
         <!-- Variable Member -->
@@ -162,7 +162,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>yellowgreen</string>
+                <string>#95CC02</string>
             </dict>
         </dict>
 
@@ -176,7 +176,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>mediumseagreen</string>
+                <string>#18D26A</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -199,7 +199,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>forestgreen</string>
+                <string>#049D06</string>
                 <key>fontStyle</key>
                 <string>italic</string>
             </dict>
@@ -225,7 +225,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>steelblue1</string>
+                <string>#4BE5FC</string>
             </dict>
         </dict>
         <!-- Character Escape -->
@@ -259,7 +259,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>salmon3</string>
+                <string>#FC7540</string>
             </dict>
         </dict>
         <!-- Character Escape -->
@@ -300,7 +300,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>royalblue1</string>
+                <string>#3138EF</string>
             </dict>
         </dict>
         <!-- Operator Assignment -->
@@ -310,7 +310,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>violetred3</string>
+                <string>#F51790</string>
             </dict>
         </dict>
         <!-- Operator Arithmetic -->
@@ -320,7 +320,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>red</string>
+                <string>#F80000</string>
             </dict>
         </dict>
         <!-- Operator Bitwise -->
@@ -330,7 +330,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>firebrick3</string>
+                <string>#CA0207</string>
             </dict>
         </dict>
         <!-- Operator logical -->
@@ -340,7 +340,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>lightslateblue</string>
+                <string>#9572ED</string>
             </dict>
         </dict>
         <!-- Operator Word -->
@@ -350,7 +350,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#B362A7</string>
+                <string>#C359BE</string>
             </dict>
         </dict>
 
@@ -396,7 +396,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>yellow</string>
+                <string>#FCF000</string>
             </dict>
         </dict>
         <!-- Preprocessor -->
@@ -406,7 +406,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#57ACAC</string>
+                <string>#34CAC0</string>
                 <key>fontStyle</key>
                 <string>bold</string>
             </dict>
