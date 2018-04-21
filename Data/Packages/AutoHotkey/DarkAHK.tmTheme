@@ -169,7 +169,7 @@
         <!-- ############################################### -->
         <!-- Comment Scope                                   -->
         <!-- ############################################### -->
-        <!-- Block Comment -->
+        <!-- Comentario en bloque -->
         <dict>
             <key>scope</key>
             <string>comment.block</string>
@@ -192,7 +192,7 @@
                 <string>italic bold</string>
             </dict>
         </dict>
-        <!-- Line Comment -->
+        <!-- Comentario en línea -->
         <dict>
             <key>scope</key>
             <string>comment.line</string>
@@ -225,24 +225,24 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#4BE5FC</string>
-            </dict>
-        </dict>
-        <!-- Character Escape -->
-        <dict>
-            <key>scope</key>
-            <string>constant.character.escape</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>grey51</string>
+                <string>#4DA6FF</string>
             </dict>
         </dict>
 
         <!-- ############################################### -->
-        <!-- String Scope                                   -->
+        <!-- Ámbito de cadena                                -->
         <!-- ############################################### -->
-        <!-- Quoted Single -->
+        <!-- Normal -->
+        <dict>
+            <key>scope</key>
+            <string>string</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FC7540</string>
+            </dict>
+        </dict>
+        <!-- Comilla simple -->
         <dict>
             <key>scope</key>
             <string>string.quoted.single</string>
@@ -252,7 +252,7 @@
                 <string>salmon1</string>
             </dict>
         </dict>
-        <!-- Quoted Double -->
+        <!-- Comilla doble -->
         <dict>
             <key>scope</key>
             <string>string.quoted.double</string>
@@ -262,14 +262,14 @@
                 <string>#FC7540</string>
             </dict>
         </dict>
-        <!-- Character Escape -->
+        <!-- Caracter de escape -->
         <dict>
             <key>scope</key>
             <string>constant.character.escape</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>lightsalmon4</string>
+                <string>#A35252</string>
             </dict>
         </dict>
 
@@ -416,17 +416,6 @@
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
         <dict>
             <key>name</key>
-            <string>String</string>
-            <key>scope</key>
-            <string>string</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>sgisalmon</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
             <string>String regex</string>
             <key>scope</key>
             <string>string.regex</string>
@@ -456,17 +445,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#277BD3</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Built-in constant</string>
-            <key>scope</key>
-            <string>constant.language</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>steelblue1</string>
             </dict>
         </dict>
         <dict>
