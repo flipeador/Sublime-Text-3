@@ -11,14 +11,14 @@
     Línea #1 -
     Línea #2 -
 */
-var := value    /* XXX */
+Variable := Valor    /* XXX */
 
 
 ; Directivas
-#Include <funciones>
-#IncludeAgain C:\Funciones.ahk
-#SingleInstance Force
+#Warn
 #NoTrayIcon
+#Include <funciones>
+#SingleInstance Force
 
 
 ; Operadores, expresiones y números
@@ -33,8 +33,8 @@ Obj := {A: 43, B: 498, (Var): 10.48, H: 0xFF, [1, 2, "ABC"]}
 
 
 ; Cadenas, secuencias de escape y concatenación
-Str := "Este es un ejemplo"
-Str := 'Este es un ejemplo'
+Str := "Este es un ejemplo" . " !!!  =D"
+Str := 'Este es un ejemplo' . "`r`n"
 Str := "`"Este es un ejemplo`""
 Str := "Este 'es 'un' ejemplo"
 Str := 'Este "es "un" ejemplo'
@@ -105,7 +105,7 @@ If ((!FALSE) && (TRUE) AND (TRUE))
 ; Etiquetas, teclas y reasignaciones
 Label:
 #v:: MsgBox("Has presionado Win+V")
-CTRL & P:: Suspend(-1)
+CTRL & P:: Suspend(-1)    ; necesario #SuspendExempt
 ::btw::by the way
 Return
 
