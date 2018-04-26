@@ -84,33 +84,30 @@ Obj.Method(Extends * 2)
 Class ClassName Extends BaseClassName
 
 
-; Palabras claves. Variables incorporadas.
+; Palabras claves, bucles y variables incorporadas.
 If (TRUE)
     MsgBox("Este mensaje siempre será mostrado")
 Else
-{
     MsgBox("Este mensaje nunca será mostrado")
-    ++A
-}
-Loop (Var * 2)
+Loop
     MsgBox("Repetición #" . A_Index)
-
-If ((!FALSE) && (TRUE) AND (TRUE))
+Switch SwitchValue
 {
-    ; Teclas y botones
-    SendInput("Texto{F1}")
+    Case CaseValue1: Statements1
+    Default: Statements2
 }
-
 
 ; Etiquetas, teclas y reasignaciones
-Label:
+Label:    ; comentario
 #v:: MsgBox("Has presionado Win+V")
 CTRL & P:: Suspend(-1)    ; necesario #SuspendExempt
 ::btw::by the way
-Return
+
 
 ; Errores de sintaxis
 Var = Value
-Var := "Este es un ejemplo
+Str := "Este es un ejemplo
+Str := 'Este es un ejemplo
+Exp := a ++ b ++x * y++ -- c *** ACos(-1) ||| 1 &&&&& 3
 Función, param1, param2
-Var := a ++ b ++x * y++ -- c *** ACos(-1) ||| 1 &&&&& 3
+Label :
