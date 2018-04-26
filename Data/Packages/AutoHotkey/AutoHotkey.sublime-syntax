@@ -39,17 +39,20 @@
 # | (?:   )            | Agrupa caracteres pero se anula la captura                                                                   |
 # | ^                  | Indica el inicio de la línea                                                                                 |
 # | $                  | Indica el final de la línea                                                                                  |
+# | ?i:                | Sin distinción de mayúsculas y minúsculas                                                                    |
 # +--------------------+--------------------------------------------------------------------------------------------------------------+
 #
 # Caracteres especiales:
 #   \ . * ? + [ { | ( ) ^ $
 #
 # Referencias:
+#   https://www.sublimetext.com/docs/3/syntax.html
 #   http://www.pcre.org/pcre.txt
 #   http://www.regular-expressions.info/
 #   http://regexr.com/
 #   https://regexone.com/lesson/
 #   https://www.adictosaltrabajo.com/tutoriales/regexsam/
+#   https://codepen.io/jakealbaugh/post/regex-in-sublime-text
 ---
 
 
@@ -200,13 +203,26 @@ contexts:
     - match: '\b(?i:base)\b' # (?<=\.)
       scope: variable.other.member2.ahk
 
-    # Entity Label
-    - match: ^\s*(\w+)(:)\s*(;.*)?$
-      scope: entity.name.label.ahk
-    
     # Entity Namespace (Hotkeys)
     - match: ^\s*((?!"|;|{).)+(::)
       scope: entity.name.namespace.ahk
       captures:
-        1: entity.name.namespace.ahk
+        1: entity.name.namespace.ahk  # label
         2: entity.name.namespace2.ahk  # ::
+
+    # Entity Label
+    - match: ^\s*(\w+)\s+(:)(?!=).*$  # label :
+      scope: syntax.error.ahk
+
+    #- match: ^\s*(?!(?i:default))(\w+)(:)(?!=)(?!\s+;).+$  # label:.*
+    #  scope: syntax.error.ahk
+
+    - match: ^\s*(\w+)(:)\s*(;.*)?$  # label:
+      scope: entity.name.label.ahk
+      captures:
+        3: comment.line.ahk  # " ;.*"
+
+    #- match: ^\s*(?i:default)(:)  # switch-case default
+    #  scope: keyword.control.ahk
+    #  captures:
+    #    1: keyword.operator.logical  # :
