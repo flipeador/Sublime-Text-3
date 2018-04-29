@@ -258,10 +258,6 @@
         // ############################################################################################################################################
         // # Maths                                                                                                                                    #
         // ############################################################################################################################################
-        {"trigger": "Hex\t(Number)", "contents": "Format(\"{:X}\", ${1:Number})"},
-        {"trigger": "Hex2\t(N, Number)", "contents": "Format(\"0x{:0${1:N}X}\", ${2:Number})"},
-        {"trigger": "Int\t(Number)", "contents": "Format(\"{:i}\", ${1:Number})"},
-        {"trigger": "Float\t(Number)", "contents": "Format(\"{:f}\", ${1:Number})"},
         {"trigger": "Between\t(Number, Low, High)", "contents": "(${1:Number} >= ${2:Low} && $1 <= ${3:High})"},
         {"trigger": "Floor\t(Number)", "contents": "Floor($1)"},
         {"trigger": "Format\t(FormatStr [, Values...])", "contents": "Format($1)"},
@@ -284,6 +280,9 @@
         {"trigger": "Sin\t(Number)", "contents": "Sin($1)"},
         {"trigger": "Max\t(Number1 [, Number2, ...])", "contents": "Max($1)"},
         {"trigger": "Min\t(Number1 [, Number2, ...])", "contents": "Min($1)"},
+        {"trigger": "Float\t(Value)", "contents": "Float(${1:Value})"},
+        {"trigger": "Integer\t(Value)", "contents": "Integer(${1:Value})"},
+        {"trigger": "Hex\t(Number)", "contents": "Format(\"{:X}\", ${1:Number})"},
 
 
         // ############################################################################################################################################
@@ -463,6 +462,7 @@
         {"trigger": "StrUpper\t(String)", "contents": "Format(\"{:U}\", ${1:String})"},
         {"trigger": "SubStr\t(String, StartingPos [, Length])", "contents": "SubStr(${1:String}, ${2:StartingPos})"},
         {"trigger": "InStr\t(Haystack, Needle [, CaseSensitive := false, StartingPos := 1, Occurrence := 1])", "contents": "InStr(${1:Haystack}, ${2:Needle})"},
+        {"trigger": "String\t(Value)", "contents": "String(${1:Value})"},
 
 
         // ############################################################################################################################################
