@@ -41,7 +41,7 @@
                 <key>foreground</key>
                 <string>#BFD7DB</string>
                 <key>caret</key>
-                <string>gold2</string>
+                <string>#EEC900</string>
                 <key>lineHighlight</key>
                 <string>#30343B</string>
                 <key>invisibles</key>
@@ -51,11 +51,34 @@
                 <!-- Selection -->
                 <key>selection</key>
                 <string>#30343B</string>
+                <key>selection_foreground</key>
+                <string>#00000000</string>
                 <key>selectionBorder</key>
                 <string>#5A5F6B</string>
+                <key>selection_border_width</key>
+                <string>1</string>
+                <key>inactive_selection</key>
+                <string>#30343B</string>
+                <key>inactive_selection_foreground</key>
+                <string>#00000000</string>
+                <key>selection_corner_style</key>
+                <string>round</string>
+                <key>selection_corner_radius</key>
+                <string>3</string>
                 <!-- Accents -->
                 <key>misspelling</key>
-                <string>red</string>
+                <string>#FF0000</string>
+                <key>fold_marker</key>
+                <string>#D700D7</string>
+                <key>minimap_border</key>
+                <string>#8080FF</string>
+                <key>accent</key>
+                <string>#FFFF00</string>
+                <!-- Gutter -->
+                <key>gutter</key>
+                <string>#000000</string>
+                <key>gutter_foreground</key>
+                <string>#6A7380</string>
                 <!-- Find -->
                 <key>highlight</key>
                 <string>#FFE792</string>
@@ -67,21 +90,28 @@
                 <key>bracketsOptions</key>
                 <string>foreground</string>
                 <key>bracketsForeground</key>
-                <string>purple2</string>
+                <string>#912CEE</string>
                 <key>bracketContentsOptions</key>
                 <string>foreground</string>
                 <key>bracketContentsForeground</key>
-                <string>purple2</string>
+                <string>#912CEE</string>
                 <!-- Tags -->
                 <key>tagsOptions</key>
                 <string>stippled_underline</string>
                 <key>tagsForeground</key>
-                <string>gold</string>
+                <string>#FFD700</string>
                 <!-- Shadows -->
                 <key>shadow</key>
-                <string>blue</string>
+                <string>#8080FF</string>
                 <key>shadowWidth</key>
-                <string>4</string>
+                <string>2</string>
+                <!-- Guides -->
+                <key>guide</key>
+                <string>#383A4B</string>
+                <key>active_guide</key>
+                <string>#4B4E65</string>
+                <key>stack_guide</key>
+                <string>#383A4B</string>
             </dict>
         </dict>
 
@@ -95,7 +125,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>slateblue2</string>
+                <string>#7A67EE</string>
                 <key>fontStyle</key>
                 <string>bold</string>
             </dict>
@@ -152,7 +182,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>turquoise1</string>
+                <string>#00F5FF</string>
             </dict>
         </dict>
         <!-- Variable Member 2 -->
@@ -187,7 +217,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>mediumseagreen</string>
+                <string>#3CB371</string>
                 <key>fontStyle</key>
                 <string>italic bold</string>
             </dict>
@@ -249,7 +279,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>salmon1</string>
+                <string>#FF8C69</string>
             </dict>
         </dict>
         <!-- Comilla doble -->
@@ -282,7 +312,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>black</string>
+                <string>#000000</string>
                 <key>background</key>
                 <string>#F25A55</string>
                 <key>fontStyle</key>
@@ -364,7 +394,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>lightyellow4</string>
+                <string>#8B8B7A</string>
             </dict>
         </dict>
         <!-- Functions -->
@@ -374,7 +404,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>yellow2</string>
+                <string>#FCF000</string>
             </dict>
         </dict>
         <!-- Class Functions -->
@@ -384,7 +414,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>yellowgreen</string>
+                <string>#9ACD32</string>
                 <key>fontStyle</key>
                 <string>bold</string>
             </dict>

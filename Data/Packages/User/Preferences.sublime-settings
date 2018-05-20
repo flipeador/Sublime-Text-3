@@ -33,5 +33,7 @@
 	"tab_size": 4,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"word_separators": "./\\()\"'-:,.;<>~!@$%^&*|+=[]{}`~?"
+	"word_separators": "./\\()\"'-:,.;<>~!@$%^&*|+=[]{}`~?",
+	"indent_guide_options": ["draw_active"],
+	"draw_minimap_border": false
 }
