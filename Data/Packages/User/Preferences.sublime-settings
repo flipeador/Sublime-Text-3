@@ -16,6 +16,7 @@
 	"caret_style": "phase",
 	"color_scheme": "Packages/AutoHotkey/DarkAHK.tmTheme",
 	"default_encoding": "UTF-8",
+	"draw_minimap_border": false,
 	"font_face": "Consolas",
 	"font_size": 8,
 	"highlight_line": true,
@@ -25,6 +26,10 @@
 	[
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
 	"margin": 0,
 	"remember_full_screen": false,
 	"show_encoding": true,
@@ -33,7 +38,5 @@
 	"tab_size": 4,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"word_separators": "./\\()\"'-:,.;<>~!@$%^&*|+=[]{}`~?",
-	"indent_guide_options": ["draw_active"],
-	"draw_minimap_border": false
+	"word_separators": "./\\()\"'-:,.;<>~!@$%^&*|+=[]{}`~?"
 }
