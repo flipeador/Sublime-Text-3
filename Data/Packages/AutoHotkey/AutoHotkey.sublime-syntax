@@ -147,7 +147,10 @@ contexts:
       scope: keyword.operator.bitwise.ahk
 
     # Keyword Operator logical
-    - match: '(!|=){3,}'
+    - match: '!{3,}'
+      scope: syntax.error.ahk
+
+    - match: '={4,}'
       scope: syntax.error.ahk
 
     - match: '!|<|>|>=|<=|=|==|=>|<>|!=|\?|:'
