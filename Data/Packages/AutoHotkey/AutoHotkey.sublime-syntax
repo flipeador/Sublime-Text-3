@@ -115,7 +115,7 @@ contexts:
       scope: constant.language.ahk
     
     # Keyword Control ^((\s|})+|)
-    - match: \b(?i:local|byref|static|global|extends|new|exit|exitapp|gosub|goto|reload|loop|pause|if|else|return|break|for|while|class|catch|finally|throw|try|until|continue|switch|case)\b
+    - match: \b(?<!\.)(?i:local|byref|static|global|extends|new|exit|exitapp|gosub|goto|reload|loop|pause|if|else|return|break|for|while|class|catch|finally|throw|try|until|continue|switch|case)\b
       scope: keyword.control.ahk
     
     # Keyword Operator Assignment
