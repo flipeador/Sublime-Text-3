@@ -18,6 +18,11 @@
 	"default_encoding": "UTF-8",
 	"draw_minimap_border": false,
 	"font_face": "Consolas",
+	"font_options":
+	[
+		"directwrite",
+		"subpixel_antialias"
+	],
 	"font_size": 8,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -37,6 +42,11 @@
 	"tab_completion": true,
 	"tab_size": 4,
 	"theme": "Adaptive.sublime-theme",
+	"theme_font_options":
+	[
+		"directwrite",
+		"subpixel_antialias"
+	],
 	"translate_tabs_to_spaces": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@$%^&*|+=[]{}`~?"
 }
