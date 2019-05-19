@@ -1,8 +1,8 @@
-﻿<!--
+<!--
     COLOR SCHEME
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Name:       Sublime Text Dark Theme
+    Name:       AutoHotkey v2 Dark Theme - Sublime Text v3
     Author:     Flipeador (https://autohotkey.com/boards/memberlist.php?mode=viewprofile&u=60315) | flipeador@gmail.com
     License:    Public Domain Mark 1.0
     URL:        https://github.com/flipeador
@@ -10,7 +10,6 @@
     Ported sublime theme based off of (https://github.com/philpl/Adventurous-Syntax)
 
     Color Schemes: https://www.sublimetext.com/docs/3/color_schemes.html
-    Topic: https://autohotkey.com/boards/viewtopic.php?f=45&t=35784
 -->
 
 
@@ -22,9 +21,9 @@
     <key>author</key>
     <string>Flipeador</string>
     <key>name</key>
-    <string>DarkAHK</string>
+    <string>AutoHotkey v2 Dark Theme</string>
     <key>semanticClass</key>
-    <string>DarkAHK</string>
+    <string>AHKv2-DarkTheme</string>
     <key>settings</key>
     <array>
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
@@ -125,7 +124,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#7A67EE</string>
+                <string>#80FF80</string>
                 <key>fontStyle</key>
                 <string>bold</string>
             </dict>
@@ -260,39 +259,56 @@
         </dict>
 
         <!-- ############################################### -->
-        <!-- Ámbito de cadena                                -->
+        <!-- Strings                                         -->
         <!-- ############################################### -->
-        <!-- Normal -->
         <dict>
             <key>scope</key>
             <string>string</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#FC7540</string>
+                <string>#FD8253</string>
             </dict>
         </dict>
-        <!-- Comilla simple -->
-        <dict>
-            <key>scope</key>
-            <string>string.quoted.single</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#FF8C69</string>
-            </dict>
-        </dict>
-        <!-- Comilla doble -->
+        <!-- Double quotation marks  -->
         <dict>
             <key>scope</key>
             <string>string.quoted.double</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#FC7540</string>
+                <string>#FD8253</string>
             </dict>
         </dict>
-        <!-- Caracter de escape -->
+        <dict>
+            <key>scope</key>
+            <string>string.quote.double</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD7440</string>
+            </dict>
+        </dict>
+        <!-- Single quotation marks -->
+        <dict>
+            <key>scope</key>
+            <string>string.quoted.single</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD8253</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>scope</key>
+            <string>string.quote.single</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD7440</string>
+            </dict>
+        </dict>
+        <!-- Escape character -->
         <dict>
             <key>scope</key>
             <string>constant.character.escape</string>
@@ -330,7 +346,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#3138EF</string>
+                <string>#313CFF</string>
             </dict>
         </dict>
         <!-- Operator Assignment -->
@@ -381,6 +397,15 @@
             <dict>
                 <key>foreground</key>
                 <string>#C359BE</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator.word3</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#7A67EE</string>
             </dict>
         </dict>
 
@@ -549,17 +574,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#D3422E</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Keyword Control</string>
-            <key>scope</key>
-            <string>keyword.control</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#4242FF</string>
             </dict>
         </dict>
         <dict>
