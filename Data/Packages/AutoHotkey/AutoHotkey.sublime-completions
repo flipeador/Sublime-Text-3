@@ -66,11 +66,12 @@
         // ############################################################################################################################################
         // # External Libraries                                                                                                                       #
         // ############################################################################################################################################
+        {"trigger": "BufferAlloc\t(Bytes)", "contents": "BufferAlloc(${1:Bytes})"},
         {"trigger": "CallbackCreate\t(Func, Options = \"\", ParamCount = Func.MinParams)", "contents": "CallbackCreate(\"${1:Func}\")"},
         {"trigger": "CallbackFree\t(Address)", "contents": "CallbackFree(${1:Address})"},
         {"trigger": "DllCall\t(\"[DllFile\\]Function\" [, \"Type1\", \"Arg1\", \"Cdecl ReturnType\"])", "contents": "DllCall(${1:\"Kernel32.dll\\Sleep\"})"},
-        {"trigger": "NumGet\t(Address [, Type = \"UPtr\"])", "contents": "NumGet(${1:Address}, \"${2:UPtr}\")"},
-        {"trigger": "NumPut\t(Number, Address [, Type = \"UPtr\"])", "contents": "NumPut(${1:Number}, ${2:Address}, \"${3:UPtr}\")"},
+        {"trigger": "NumGet\t(Target [, Offset = 0][, Type = \"UPtr\"])", "contents": "NumGet(${1:Target})"},
+        {"trigger": "NumPut\t(Type, Number, [, Type2, Number2, ...] Target [, Offset = 0])", "contents": "NumPut(${1:Type}, ${2:Number})"},
         {"trigger": "ComObjActive\t(CLSID)", "contents": "ComObjActive(${1:CLSID})"},
         {"trigger": "ComObjArray\t(VarType, Count1 [, Count2, ... Count8])", "contents": "ComObjArray(${1:VarType}, ${2:Count1})"},
         {"trigger": "ComObjConnect\t(ComObject [, Prefix])", "contents": "ComObjConnect(${1:ComObject})"},
@@ -396,8 +397,8 @@
         {"trigger": "StrLower\t(String)", "contents": "Format(\"{:L}\", ${1:String})"},
         {"trigger": "StrUpper\t(String)", "contents": "Format(\"{:U}\", ${1:String})"},
         {"trigger": "StrLen\t(String)", "contents": "StrLen(${1:String})"},
-        {"trigger": "StrGet\t(Address [, Length] [, Encoding])", "contents": "StrGet(${1:Address}, ${2:\"UTF-16\"})"},
-        {"trigger": "StrPut\t(String, Address [, Length] [, Encoding])", "contents": "StrPut(${1:String}, ${2:Address}, ${3:\"UTF-16\"})"},
+        {"trigger": "StrGet\t(Target [, Length] [, Encoding])", "contents": "StrGet(${1:Target})"},
+        {"trigger": "StrPut\t(String, Target [, Length] [, Encoding])", "contents": "StrPut(${1:String}"},
         {"trigger": "StrReplace\t(Haystack, SearchText , ReplaceText, OutCount, Limit)", "contents": "StrReplace(${1:Haystack}, ${2:SearchText})"},
         {"trigger": "StrSplit\t(String [, Delimiters, OmitChars, MaxParts = -1])", "contents": "StrSplit(${1:String})"},
         {"trigger": "SubStr\t(String, StartingPos [, Length])", "contents": "SubStr(${1:String}, ${2:StartingPos})"},
