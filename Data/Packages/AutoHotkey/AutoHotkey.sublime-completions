@@ -66,7 +66,7 @@
         // ############################################################################################################################################
         // # External Libraries                                                                                                                       #
         // ############################################################################################################################################
-        {"trigger": "BufferAlloc\t(Bytes)", "contents": "BufferAlloc(${1:Bytes})"},
+        {"trigger": "BufferAlloc\t(Bytes [, FillByte])", "contents": "BufferAlloc(${1:Bytes})"},
         {"trigger": "CallbackCreate\t(Func, Options = \"\", ParamCount = Func.MinParams)", "contents": "CallbackCreate(\"${1:Func}\")"},
         {"trigger": "CallbackFree\t(Address)", "contents": "CallbackFree(${1:Address})"},
         {"trigger": "DllCall\t(\"[DllFile\\]Function\" [, \"Type1\", \"Arg1\", \"Cdecl ReturnType\"])", "contents": "DllCall(${1:\"Kernel32.dll\\Sleep\"})"},
@@ -85,8 +85,11 @@
         {"trigger": "ComObjValue\t(ComObject)", "contents": "ComObjValue(${1:ComObject})"},
         {"trigger": "CloseHandle\t(Handle)", "contents": "DllCall(\"Kernel32.dll\\CloseHandle\", \"Ptr\", ${1:Handle})"},
         {"trigger": "FreeLibrary\t(hModule)", "contents": "DllCall(\"Kernel32.dll\\FreeLibrary\", \"Ptr\", ${1:hModule})"},
+        {"trigger": "LoadLibrary\t(DllName)", "contents": "DllCall(\"Kernel32.dll\\LoadLibrary\", \"Str\", \"${1:DllName}\", \"Ptr\")"},
         {"trigger": "LoadLibraryEx\t(DllName,, Flags)", "contents": "DllCall(\"Kernel32.dll\\LoadLibraryEx\", \"Str\", \"${1:DllName}\", \"UInt\", 0, \"UInt\", 0x2, \"Ptr\")"},
         {"trigger": "CoTaskMemFree\t(Address)", "contents": "DllCall(\"Ole32.dll\\CoTaskMemFree\", \"Ptr\", ${1:Address})"},
+        {"trigger": "MemCopy\t(Dest, Src, Bytes)", "contents": "DllCall(\"msvcrt.dll\\memcpy\", \"Ptr\", ${1:Dest}, \"Ptr\", ${2:Src}, \"Ptr\", ${3:Bytes}, \"CDecl Ptr\")"},
+        {"trigger": "MemFill\t(Dest, FillByte, Bytes)", "contents": "DllCall(\"msvcrt.dll\\memset\", \"Ptr\", ${1:Dest}, \"Int\", ${2:FillByte}, \"Ptr\", ${3:Bytes}, \"CDecl Ptr\")"},
 
 
         // ############################################################################################################################################
@@ -158,7 +161,7 @@
         {"trigger": "Until\t(Expression)", "contents": "until ${1:Expression}"},
         {"trigger": "While-loop\tExpression", "contents": "while ${1:Expression}"},
         {"trigger": "Type\t(Value)", "contents": "Type(${1:Value})"},
-        {"trigger": "Switch-case\t[SwitchValue]", "contents": "switch ${1:SwitchValue}\n{\n\tcase ${2:CaseValue}: ${3:Expression}\n\tdefault: ${4:Expression}\n}$5"},
+        {"trigger": "Switch-case\t[SwitchValue]", "contents": "switch ${1:SwitchValue}\n{\ncase ${2:CaseValue}: ${3:Expression}\n}"},
         {"trigger": "Do-until-loop\tLoop + Until", "contents": "loop\n{\n\t;$1\n}\nuntil ${2:Expression}"},
         {"trigger": "Do-while-loop\tLoop + Until", "contents": "loop\n{\n\t;$1\n}\nuntil !(${2:Condition})"},
         {"trigger": "Loop\t([Count])", "contents": "loop"},
@@ -560,6 +563,7 @@
         {"trigger": "#Warn\t[WarningType, WarningMode]", "contents": "#Warn"},
         {"trigger": "#WinActivateForce", "contents": "#WinActivateForce"},
         {"trigger": "#SuspendExempt\t[Exempt = *TRUE/FALSE]", "contents": "#SuspendExempt"},
+        {"trigger": "#DllLoad\tFileOrDirName", "contents": "#DllLoad ${1:FileOrDirName}"},
 
 
         // ############################################################################################################################################
@@ -572,7 +576,7 @@
         {"trigger": "__Call Meta-Function\t(Name [, Params])", "contents": "__Call(Name, Params)\n{\n\t;$1\n}"},
         {"trigger": "__Enum Method\t(NumberOfVars)", "contents": "__Enum(NumberOfVars)\n{\n\t$1return (*) => 0  ; Enumerator Object.\n}"},
         {"trigger": "__Item Property\t[Name]", "contents": "__Item[name]\n{\n\tget => ${1:EnvGet(name)}\n\tset => ${2:EnvSet(name, value)}\n}"},
-        {"trigger": "new\tClass", "contents": "new ${1:ClassName}"},
+        {"trigger": "new\tClassName.New(Params)", "contents": "${1:ClassName}.New()"},
         {"trigger": "extends\tBaseClassName", "contents": "extends ${1:BaseClassName}"},
         {"trigger": "ObjAddRef\t(Ptr)", "contents": "ObjAddRef($1)"},
         {"trigger": "ObjBindMethod\t(Obj, Method, Params)", "contents": "ObjBindMethod(${1:Obj}, Method, Params)"},
