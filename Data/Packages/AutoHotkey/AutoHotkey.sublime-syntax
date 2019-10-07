@@ -72,7 +72,7 @@ variables:
   method_list        : 'show|addtext|addedit|addupdown|addpic|addbutton|addcheckbox|addradio|addddl|addcombobox|addlistbox|addlistview|addtreeview|onevent|addlink|addhotkey|adddatetime|addmonthcal|addslider|addprogress|addgroupbox|addtab3|addstatusbar|addactivex|addcustom'
   class_methods      : '__new|__delete|__get|__set|__call|__enum'
   class_properties   : '__item'
-  preprocessor       : 'suspendexempt|include|includeagain|allowsamelinecomments|clipboardtimeout|errorstdout|hotkeyinterval|hotkeymodifiertimeout|hotstring|iftimeout|if|inputlevel|installkeybdhook|installmousehook|keyhistory|maxhotkeysperinterval|maxthreadsbuffer|maxthreadsperhotkey|maxthreads|menumaskkey|notrayicon|persistent|singleinstance|usehook|warn|winactivateforce'
+  preprocessor       : 'dllload|suspendexempt|include|includeagain|allowsamelinecomments|clipboardtimeout|errorstdout|hotkeyinterval|hotkeymodifiertimeout|hotstring|iftimeout|if|inputlevel|installkeybdhook|installmousehook|keyhistory|maxhotkeysperinterval|maxthreadsbuffer|maxthreadsperhotkey|maxthreads|menumaskkey|notrayicon|persistent|singleinstance|usehook|warn|winactivateforce'
   numeric            : '(0(x|X)[0-9a-fA-F]+)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?'
   operator_assignment: '\:=|\+=|-=|\*=|/=|//=|\.=|\|=|\&=|\^=|\>\>=|\<\<=|\~=|\:\:'
   keyword_list       : 'local|byref|static|global|extends|new|gosub|goto|loop|if|else|return|break|for|while|catch|finally|throw|try|until|continue|switch|case'  # Anywhere.
@@ -161,7 +161,7 @@ contexts:
     - match: \b(?<!\.)(?i:{{keyword_list}})\b
       scope: keyword.control.ahk
 
-    - match: ^(?<!\.)(?i:{{keyword_list3}})\b
+    - match: ^\s*(?<!\.)(?i:{{keyword_list3}})\b
       scope: keyword.control.ahk
 
     # Constant Language
