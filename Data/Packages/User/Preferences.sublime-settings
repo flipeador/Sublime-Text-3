@@ -1,9 +1,7 @@
 {
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": true,
-	"auto_complete_with_fields": true,
 	"auto_complete_delay": 50,
-	//"auto_complete_selector": "source - comment",
 	"auto_complete_size_limit": 4194304,
 	"auto_complete_triggers":
 	[
@@ -12,6 +10,7 @@
 			"selector": "text.html"
 		}
 	],
+	"auto_complete_with_fields": true,
 	"auto_find_in_selection": true,
 	"caret_style": "phase",
 	"color_scheme": "Packages/AutoHotkey/DarkAHK.tmTheme",
@@ -37,6 +36,7 @@
 	],
 	"margin": 0,
 	"remember_full_screen": false,
+	"scroll_speed": 0.2,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_completion": true,
@@ -48,6 +48,6 @@
 		"subpixel_antialias"
 	],
 	"translate_tabs_to_spaces": true,
-	"scroll_speed": 0.2,
+	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@$%^&*|+=[]{}`~?"
 }
