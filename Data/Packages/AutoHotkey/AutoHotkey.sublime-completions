@@ -1,4 +1,4 @@
-// Archivo de Autocompletar
+// Archivo de Autocompletar 20191127
 // Sintaxis:
 //     {"trigger": "Nombre Elemento\tDescripción", "contents": "Funcion ${1:Parametro 1}, ${2:Parametro 2}"},
 // Caracteres especiales:
@@ -69,7 +69,8 @@
         {"trigger": "BufferAlloc\t(Bytes [, FillByte])", "contents": "BufferAlloc(${1:Bytes})"},
         {"trigger": "CallbackCreate\t(Func, Options = \"\", ParamCount = Func.MinParams)", "contents": "CallbackCreate(\"${1:Func}\")"},
         {"trigger": "CallbackFree\t(Address)", "contents": "CallbackFree(${1:Address})"},
-        {"trigger": "DllCall\t(\"[DllFile\\]Function\" [, \"Type1\", \"Arg1\", \"Cdecl ReturnType\"])", "contents": "DllCall(${1:\"Kernel32.dll\\Sleep\"})"},
+        {"trigger": "ComCall\t(Index, ComObject [, Type1, Arg1, ReturnType])", "contents": "ComCall(${1:Index}, ${2:ComObject})"},
+        {"trigger": "DllCall\t(\"[DllFile\\]Function\" [, Type1, Arg1, \"Cdecl ReturnType\"])", "contents": "DllCall(${1:\"Kernel32.dll\\Sleep\"})"},
         {"trigger": "NumGet\t(Target [, Offset = 0][, Type = \"UPtr\"])", "contents": "NumGet(${1:Target})"},
         {"trigger": "NumPut\t(Type, Number, [, Type2, Number2, ...] Target [, Offset = 0])", "contents": "NumPut(${1:Type}, ${2:Number})"},
         {"trigger": "ComObjActive\t(CLSID)", "contents": "ComObjActive(${1:CLSID})"},
@@ -152,7 +153,7 @@
         {"trigger": "Pause\t(OnOffToggle = -1, OperateOnUnderlyingThread = 0)", "contents": "Pause($1)"},
         {"trigger": "Reload\t(void)", "contents": "Reload()"},
         {"trigger": "Return\t[Expression]", "contents": "return"},
-        {"trigger": "SetTimer\t(Callback, PeriodOnOffDelete, Priority = 0)", "contents": "SetTimer(${1:Callback})"},
+        {"trigger": "SetTimer\t(Callback, Period, Priority = 0)", "contents": "SetTimer(${1:Callback})"},
         {"trigger": "Sleep\t(DelayInMilliseconds)", "contents": "Sleep(${1:Delay})"},
         {"trigger": "Suspend\t(OnOffToggle = -1)", "contents": "Suspend($1)"},
         {"trigger": "Thread\t(SubFunction [, Value1, Value2])", "contents": "Thread(${1:SubFunction})"},
@@ -327,6 +328,7 @@
         {"trigger": "IsByRef\t(ParameterVar)", "contents": "IsByRef(${1:ParameterVar})"},
         {"trigger": "IsFunc\t(FunctionName)", "contents": "IsFunc(${1:FuncName})"},
         {"trigger": "IsObject\t(ObjectValue)", "contents": "IsObject(${1:ObjValue})"},
+        {"trigger": "IsSet\t(Var)", "contents": "IsSet(${1:Var})"},
         {"trigger": "ListLines\t([OnOff])", "contents": "ListLines()"},
         {"trigger": "ListVars\t(void)", "contents": "ListVars()"},
         {"trigger": "OutputDebug\t(Text)", "contents": "OutputDebug(${1:Text})"},
@@ -584,7 +586,6 @@
         {"trigger": "ObjDelete\t(Object)", "contents": "ObjDelete(${1:Object})"},
         {"trigger": "ObjGetAddress\t(Object, Key)", "contents": "ObjGetAddress(${1:Object}, ${2:Key})"},
         {"trigger": "ObjGetCapacity\t(Object [, Key])", "contents": "ObjGetCapacity(${1:Object})"},
-        {"trigger": "ObjHasKey\t(Object, Key)", "contents": "ObjHasKey(${1:Object}, Key)"},
         {"trigger": "ObjInsertAt\t(Object, Pos, Value1 [, Value2, ... ValueN])", "contents": "ObjInsertAt(${1:Object}, Pos, Value1)"},
         {"trigger": "ObjLength\t(Array)", "contents": "ObjLength(${1:Array})"},
         {"trigger": "ObjCount\t(Object)", "contents": "ObjCount(${1:Object})"},
