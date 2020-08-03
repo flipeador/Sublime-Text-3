@@ -1,4 +1,4 @@
-// Archivo de Autocompletar 20191127
+// Archivo de Autocompletar 20200803
 // Sintaxis:
 //     {"trigger": "Nombre Elemento\tDescripción", "contents": "Funcion ${1:Parametro 1}, ${2:Parametro 2}"},
 // Caracteres especiales:
@@ -72,13 +72,12 @@
         {"trigger": "ComCall\t(Index, ComObject [, Type1, Arg1, ReturnType])", "contents": "ComCall(${1:Index}, ${2:ComObject})"},
         {"trigger": "DllCall\t(\"[DllFile\\]Function\" [, Type1, Arg1, \"Cdecl ReturnType\"])", "contents": "DllCall(${1:\"Kernel32.dll\\Sleep\"})"},
         {"trigger": "NumGet\t(Target [, Offset = 0][, Type = \"UPtr\"])", "contents": "NumGet(${1:Target})"},
-        {"trigger": "NumPut\t(Type, Number, [, Type2, Number2, ...] Target [, Offset = 0])", "contents": "NumPut(${1:Type}, ${2:Number})"},
+        {"trigger": "NumPut\t(Type, Number, [Type2, Number2, ...] Target [, Offset = 0])", "contents": "NumPut(${1:Type}, ${2:Number})"},
         {"trigger": "ComObjActive\t(CLSID)", "contents": "ComObjActive(${1:CLSID})"},
         {"trigger": "ComObjArray\t(VarType, Count1 [, Count2, ... Count8])", "contents": "ComObjArray(${1:VarType}, ${2:Count1})"},
         {"trigger": "ComObjConnect\t(ComObject [, Prefix])", "contents": "ComObjConnect(${1:ComObject})"},
         {"trigger": "ComObjCreate\t(CLSID [, IID])", "contents": "ComObjCreate(${1:CLSID})"},
         {"trigger": "ComObject\t(VarType, Value [, Flags]) (DispPtr)", "contents": "ComObject($1)"},
-        {"trigger": "ComObjError\t([[Enable]])", "contents": "ComObjError($1)"},
         {"trigger": "ComObjFlags\t(ComObject [, NewFlags, Mask])", "contents": "ComObjFlags(${1:ComObject})"},
         {"trigger": "ComObjGet\t(Name)", "contents": "ComObjGet(${1:Name})"},
         {"trigger": "ComObjQuery\t(ComObject, [SID,] IID)", "contents": "ComObjQuery(${1:ComObject})"},
@@ -143,7 +142,6 @@
         {"trigger": "ExitApp\t([ExitCode])", "contents": "ExitApp()"},
         {"trigger": "Finally\tStatement", "contents": "finally"},
         {"trigger": "For-loop\tKey [, Value] in Expression", "contents": "for ${2:Key}, ${3:Value} in ${1:Expression}"},
-        {"trigger": "Gosub\tLabel", "contents": "gosub ${1:Label}"},
         {"trigger": "Goto\tLabel", "contents": "goto ${1:Label}"},
         {"trigger": "If-else-if\t(Expression)", "contents": "if ${1:Expression}"},
         {"trigger": "OnError\t(Func, AddRemove = 1)", "contents": "OnError(${1:Func})"},
@@ -213,7 +211,7 @@
 
         {"trigger": "StatusBarGetText\t([PartN, WinTitle, WinText])", "contents": "StatusBarGetText(${1:PartN}, WinTitle)"},
         {"trigger": "StatusBarWait\t([BarText, Seconds, PartN, WinTitle,, Interval])", "contents": "StatusBarWait(${1:BarText},, PartN, WinTitle)"},
-        {"trigger": "GuiCreate\t([Options, Title = A_ScriptName, EventObj])", "contents": "GuiCreate($1)"},
+        {"trigger": "GuiCreate\t([Options, Title = A_ScriptName, EventObj])", "contents": "Gui.New($1)"},
         {"trigger": "GuiCtrlFromHwnd\t(Hwnd)", "contents": "GuiCtrlFromHwnd(${1:Hwnd})"},
         {"trigger": "GuiFromHwnd\t(Hwnd [, RecurseParent = false])", "contents": "GuiFromHwnd(${1:Hwnd})"},
         {"trigger": "InputBox\t([Text, Title, Options, Default])", "contents": "InputBox($1)"},
@@ -332,7 +330,7 @@
         {"trigger": "ListLines\t([OnOff])", "contents": "ListLines()"},
         {"trigger": "ListVars\t(void)", "contents": "ListVars()"},
         {"trigger": "OutputDebug\t(Text)", "contents": "OutputDebug(${1:Text})"},
-        {"trigger": "VarSetCapacity\t(TargetVar [, RequestedCapacity, FillByte])", "contents": "VarSetCapacity(${1:TargetVar})"},
+        {"trigger": "VarSetStrCapacity\t(TargetVar [, RequestedCapacity])", "contents": "VarSetStrCapacity(${1:TargetVar})"},
 
 
         // ############################################################################################################################################
@@ -385,9 +383,13 @@
         // # Sound                                                                                                                                    #
         // ############################################################################################################################################
         {"trigger": "SoundBeep\t([Frequency, Duration])", "contents": "SoundBeep($1)"},
-        {"trigger": "SoundGet\t([ComponentType, ControlType, DeviceNumber])", "contents": "SoundGet($1)"},
         {"trigger": "SoundPlay\t(Filename [, wait])", "contents": "SoundPlay(${1:Filename})"},
-        {"trigger": "SoundSet\t(NewSetting [, ComponentType, ControlType, DeviceNumber])", "contents": "SoundSet(${1:NewSetting})"},
+        {"trigger": "SoundGetInterface\t(IID [, Component, Device])", "contents": "SoundGetInterface(${1:IID})"},
+        {"trigger": "SoundGetName\t([Component, Device])", "contents": "SoundGetName()"},
+        {"trigger": "SoundGetMute\t([Component, Device])", "contents": "SoundGetMute()"},
+        {"trigger": "SoundSetMute\t(NewSetting [, Component, Device])", "contents": "SoundSetMute(${1:NewSetting})"},
+        {"trigger": "SoundGetVolume\t([Component, Device])", "contents": "SoundGetVolume()"},
+        {"trigger": "SoundSetVolume\t(NewSetting [, Component, Device])", "contents": "SoundSetVolume(${1:NewSetting})"},
 
 
         // ############################################################################################################################################
@@ -409,7 +411,7 @@
         {"trigger": "StrUpper\t(String)", "contents": "Format(\"{:U}\", ${1:String})"},
         {"trigger": "StrLen\t(String)", "contents": "StrLen(${1:String})"},
         {"trigger": "StrGet\t(Target [, Length] [, Encoding])", "contents": "StrGet(${1:Target})"},
-        {"trigger": "StrPut\t(String, Target [, Length] [, Encoding])", "contents": "StrPut(${1:String}"},
+        {"trigger": "StrPut\t(String, Target [, Length] [, Encoding])", "contents": "StrPut(${1:String})"},
         {"trigger": "StrReplace\t(Haystack, SearchText , ReplaceText, OutCount, Limit)", "contents": "StrReplace(${1:Haystack}, ${2:SearchText})"},
         {"trigger": "StrSplit\t(String [, Delimiters, OmitChars, MaxParts = -1])", "contents": "StrSplit(${1:String})"},
         {"trigger": "SubStr\t(String, StartingPos [, Length])", "contents": "SubStr(${1:String}, ${2:StartingPos})"},
@@ -438,7 +440,8 @@
         {"trigger": "ControlGetHwnd\t([Control, WinTitle])", "contents": "ControlGetHwnd($1)"},
         {"trigger": "ControlGetLine\t(N [, Control, WinTitle])", "contents": "ControlGetLine($1)"},
         {"trigger": "ControlGetLineCount\t([Control, WinTitle])", "contents": "ControlGetLineCount($1)"},
-        {"trigger": "ControlGetList\t([Options, Control, WinTitle])", "contents": "ControlGetList($1)"},
+        {"trigger": "ControlGetItems\t(Control [, WinTitle, WinText, ExcludeTitle, ExcludeText])", "contents": "ControlGetItems($1)"},
+        {"trigger": "ListViewGetContent\t([Options, Control, WinTitle, WinText, ExcludeTitle, ExcludeText])", "contents": "ListViewGetContent($1)"},
         {"trigger": "ControlGetPos\t([X, Y, Width, Height, Control, WinTitle])", "contents": "ControlGetPos($1)"},
         {"trigger": "ControlGetSelected", "contents": "ControlGetSelected($1)"},
         {"trigger": "ControlGetStyle\t([Control, WinTitle])", "contents": "ControlGetStyle($1)"},
@@ -582,7 +585,9 @@
         {"trigger": "extends\tBaseClassName", "contents": "extends ${1:BaseClassName}"},
         {"trigger": "ObjAddRef\t(Ptr)", "contents": "ObjAddRef($1)"},
         {"trigger": "ObjBindMethod\t(Obj, Method, Params)", "contents": "ObjBindMethod(${1:Obj}, Method, Params)"},
-        {"trigger": "ObjClone\t(Object)", "contents": "ObjClone(${1:Object})"},
+        {"trigger": "ObjPtrAddRef\t(Object)", "contents": "ObjPtrAddRef(${1:Object})"},
+        {"trigger": "ObjFromPtr\t(Ptr)", "contents": "ObjFromPtr(${1:Ptr})"},
+        {"trigger": "ObjFromPtrAddRef\t(Ptr)", "contents": "ObjFromPtrAddRef(${1:Ptr})"},
         {"trigger": "ObjDelete\t(Object)", "contents": "ObjDelete(${1:Object})"},
         {"trigger": "ObjGetAddress\t(Object, Key)", "contents": "ObjGetAddress(${1:Object}, ${2:Key})"},
         {"trigger": "ObjGetCapacity\t(Object [, Key])", "contents": "ObjGetCapacity(${1:Object})"},
@@ -592,7 +597,7 @@
         {"trigger": "ObjOwnPropCount\t(Object)", "contents": "ObjOwnPropCount(${1:Object})"},
         {"trigger": "ObjNewEnum\t(Object)", "contents": "ObjNewEnum(${1:Object})"},
         {"trigger": "ObjPop\t(Object)", "contents": "ObjPop(${1:Object})"},
-        {"trigger": "ObjPush\t(Object, [ Value, Value2, ..., ValueN ])", "contents": "ObjPush(${1:Object})"},
+        {"trigger": "ObjPush\t(Object [, Value, Value2, ..., ValueN ])", "contents": "ObjPush(${1:Object})"},
         {"trigger": "ObjRawSet\t(Object, Key, Value)", "contents": "ObjRawSet(${1:Object}, ${2:Key}, ${3:Value})"},
         {"trigger": "ObjRawGet\t(Object, Key)", "contents": "ObjRawGet(${1:Object}, ${2:Key})"},
         {"trigger": "ObjGetBase\t(Obj)", "contents": "ObjGetBase(${1:Obj})"},
@@ -600,7 +605,6 @@
         {"trigger": "ObjRelease\t(Ptr)", "contents": "ObjRelease($1)"},
         {"trigger": "ObjRemoveAt\t(Object, Pos [, Length])", "contents": "ObjRemoveAt(${1:Object}, Pos)"},
         {"trigger": "ObjSetCapacity\t(Object, MaxItems|Key, ByteSize)", "contents": "ObjSetCapacity(${1:Object}, ${2:MaxItems})"},
-        {"trigger": "Object\t(Address)", "contents": "Object(${1:Address})"},
         {"trigger": "This", "contents": "this"},
         {"trigger": "Base\tObject's base property", "contents": "base"},
         {"trigger": "Value\tProperty[] Set => Value", "contents": "value"},
@@ -621,7 +625,6 @@
         {"trigger": "A_LineNumber", "contents": "A_LineNumber"},
         {"trigger": "A_LineFile", "contents": "A_LineFile"},
         {"trigger": "A_ThisFunc", "contents": "A_ThisFunc"},
-        {"trigger": "A_ThisLabel", "contents": "A_ThisLabel"},
         {"trigger": "A_AhkVersion", "contents": "A_AhkVersion"},
         {"trigger": "A_AhkPath", "contents": "A_AhkPath"},
         {"trigger": "A_AhkDir", "contents": "SubStr(A_AhkPath, 1, InStr(A_AhkPath, \"\\\",, -1)-1)"},
